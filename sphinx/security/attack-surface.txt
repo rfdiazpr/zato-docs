@@ -21,7 +21,7 @@ and any crypto resources that are in use, such as keys and certificates.
 Crypto material used by Zato components is not protected by passwords.
     
 Web admin, load-balancer and servers, all of them Python's own
-`logging package <docs.python.org/2.7/library/logging.html>`_.
+`logging package <http://docs.python.org/2.7/library/logging.html>`_.
 Depending on their configuration, the logs will written out either to local files
 or to remote systems, for instance, when using syslogd. Note that when running
 in DEBUG or TRACE1 level, raw messages passed between Zato components

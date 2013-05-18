@@ -21,33 +21,31 @@ Steps
 * Ensure you have root/sudo permissions on that system
 * Make sure the system will let the installer establish outgoing connections to the Internet,
   this is needed in order to download all the dependencies required
-* Create an empty directory (DIR)
 * Download 
-  `the installation package <https://zato.io/download/1.0>`_
-  into DIR, e.g.:
+  `the installation package <https://zato.io/download/zato-1.0.tar.bz2>`_, e.g.:
 
   .. parsed-literal::
       
-    DIR$ wget -c https://zato.io/download/zato-1.0.tar.bz2 .
+    $ wget -c https://zato.io/download/zato-1.0.tar.bz2 .
   
-* Decompress the package, e.g.:
+* Decompress the package and enter the newly created directory, e.g.:
 
   .. parsed-literal::
   
-    DIR$ tar -xjf zato-|version|.tar.bz2
+    $ tar -xjf zato-|version|.tar.bz2 && cd zato-|version|
     
 * Run the installer 
 
   .. parsed-literal::
   
-    DIR$ ./install.sh
+    zato-1.0$ ./install.sh
 
   There will be a lot of output written out to stdout and on a successful completion
   you will see OK printed out, e.g.
   
   .. parsed-literal::
   
-    DIR$ ./install.sh 
+    zato-1.0$ ./install.sh 
     [sudo] password for user: 
     Reading package lists... Done
     Building dependency tree
@@ -56,12 +54,12 @@ Steps
     .. (snipped output)
     ..
     
-    patch: in DIR/code/eggs/ ..
-    patch: processing 1/1:	 DIR/code/eggs/ ..
-    patch: successfully patched DIR/code/eggs/ ..
+    patch: in zato-1.0/code/eggs/ ..
+    patch: processing 1/1:	 zato-1.0/code/eggs/ ..
+    patch: successfully patched zato-1.0/code/eggs/ ..
 
     OK
-    DIR$
+    zato-1.0$
 
   Depending on how fast the system is and on the quality of the
   Internet connectivity, it will take at least several minutes for the installer
@@ -82,20 +80,20 @@ Steps
   :doc:`the docs <../../index>`?
 
   
-* Add DIR/bin to $PATH so that the zato command is available in the shell, e.g.
+* Add zato-1.0/bin to $PATH so that the zato command is available in the shell, e.g.
 
   .. parsed-literal::
   
-    DIR$ echo export 'PATH=$PATH:'$(pwd)/bin >> ~/.bashrc
-    DIR$ source ~/.bashrc
+    zato-1.0$ echo export 'PATH=$PATH:'$(pwd)/bin >> ~/.bashrc
+    zato-1.0$ source ~/.bashrc
     
 * Confirm the zato command can be executed
 
   .. parsed-literal::
   
-    DIR$ zato --version
+    zato-1.0$ zato --version
     Zato |version|
-    DIR$
+    zato-1.0$
   
 * That's all, Zato has been successfully installed in the system. 
   You can now visit :doc:`the main documentation index <../../index>` and have 

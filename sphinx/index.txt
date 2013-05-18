@@ -5,7 +5,7 @@ The next generation ESB and application server. Open-source. In Python.
 Getting help
 ============
 
-* `Download <https://zato.io/download/latest>`_ and :doc:`install<admin/guide/install-zato>` the latest version
+* `Download <https://zato.io/download/zato-latest.tar.bz2>`_ and :doc:`install<admin/guide/install-zato>` the latest version
 
 * `Priority commercial support and training <https://zato.io/support>`_
 

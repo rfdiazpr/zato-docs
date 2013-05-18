@@ -125,7 +125,7 @@ on doing just that
 in the administration guide and you're encouraged to get through it now
 but basically, this amounts to 3 things:
 
-* Download `the latest version <https://zato.io/download/latest>`_
+* Download and unpack `the latest version <https://zato.io/download/zato-latest.tar.bz2>`_
 * Run ./install.sh in INSTALL_DIR
 * Add INSTALL_DIR/bin to $PATH
 
