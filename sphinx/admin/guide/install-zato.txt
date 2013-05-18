@@ -28,7 +28,7 @@ Steps
 
   .. parsed-literal::
       
-    DIR$ wget -c https://zato.io/download/1.0 .
+    DIR$ wget -c https://zato.io/download/zato-1.0.tar.bz2 .
   
 * Decompress the package, e.g.:
 
@@ -86,8 +86,8 @@ Steps
 
   .. parsed-literal::
   
-    DIR$ echo 'export PATH=$PATH:`pwd`/bin >> .bashrc
-    DIR$ source .bashrc
+    DIR$ echo export 'PATH=$PATH:'$(pwd)/bin >> ~/.bashrc
+    DIR$ source ~/.bashrc
     
 * Confirm the zato command can be executed
 
