@@ -27,7 +27,7 @@ You just point a service to a connection known as, say, 'CRM' and a service can 
 pushing requests towards it. When a CRM changes its address, a service needs no reconfiguration,
 you just need to enter new address in the web admin and this will be propagated
 automatically throughout the whole cluster so that the next time a service uses
-the connection it will connect to the new location just like that.
+the connection it will use the new location just like that.
 
 We don't have a CRM and payments systems handy but for the purpose of the tutorial
 we can imitate them by invoking some previously prepared services available over at
@@ -191,7 +191,7 @@ So now we have a service which receives JSON over HTTP, invokes 2 systems
 using JSON through HTTP as well and outputs a single JSON document containing
 both responses in a unified data format (no Java style, no COBOL either).
 
-But, as you remember from :doc:`part 1 <./01>`, business folks decided that 
+But, as you remember from :doc:`part 1 <./01>`, business folk decided that 
 customers of certain types (say, 'A', B' and 'C') need a closer look, any 
 operations regarding such customers should go to a fraud detection system, 
 even operations as innocuous as checking their last payment.
@@ -344,7 +344,7 @@ What we've got so far is already cool but a really jarring thing was
 added in the previous step - information which customer types need an additional
 async message to the fraud detection system is hard-coded in the service itself.
 
-Now, should business folks decide new types should be also covered, we'd have to 
+Now, should business folk decide new types should be also covered, we'd have to 
 change the service's code and re-deploy it. Clearly, this isn't optimal, to say
 the least.
 

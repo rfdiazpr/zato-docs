@@ -33,12 +33,13 @@ services to external applications and does the processing of incoming requests.
 Servers are also capable of invoking other external applications through various
 protocols and formats.  
 
-Exactly one of the servers in a given cluster
-has also a highly-customizable built-in scheduler which can be configured to
-fire background jobs. Zato servers always contain identical copies of services,
+Zato servers always contain identical copies of services,
 they're always symmetrical and run the same code under a common configuration.
 :doc:`(read more) <../architecture/servers>`
 
+Exactly one of the servers in a given cluster
+has also a highly-customizable built-in :doc:`scheduler <../web-admin/scheduler/main>`
+which can be configured to fire background jobs.
 
 :doc:`Web admin <../architecture/web-admin>` is a slick AJAX web-based administration console used for the management of clusters.
 Each cluster has one web admin console although a single console may be reused
