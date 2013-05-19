@@ -31,7 +31,7 @@ the connection it will use the new location just like that.
 
 We don't have a CRM and payments systems handy but for the purpose of the tutorial
 we can imitate them by invoking some previously prepared services available over at
-https://zato.io/tutorial/get-customer and https://zato.io/tutorial/get-last-payment.
+http://tutorial.zato.io/get-customer and http://tutorial.zato.io/get-last-payment.
 
 We'll connect to the fraud detection system with ZeroMQ in a while.
 
@@ -45,15 +45,15 @@ CRM connection
 
 .. image:: /gfx/tutorial/outconn-crm.png
 
-======== ======================
+======== ========================
 Header   Value
-======== ======================
+======== ========================
 Name     CRM
 Active   Yes
-Host     https://zato.io
-URL path /tutorial/get-customer
+Host     http://tutorial.zato.io
+URL path /get-customer
 Security No security
-======== ======================
+======== ========================
 
 Payments connection
 ~~~~~~~~~~~~~~~~~~~
@@ -65,8 +65,8 @@ Header   Value
 ======== ==========================
 Name     Payments
 Active   Yes
-Host     https://zato.io
-URL path /tutorial/get-last-payment
+Host     http://tutorial.zato.io
+URL path /get-last-payment
 Security No security
 ======== ==========================
 
@@ -74,8 +74,8 @@ Synchronous invocations
 -----------------------
 
 The newly created connections can be used straightaway. Visiting
-`the <https://zato.io/tutorial/get-customer>`_
-`services <https://zato.io/tutorial/get-last-payment>`_
+`the <http://tutorial.zato.io/get-customer>`_
+`services <http://tutorial.zato.io/get-last-payment>`_
 they point to lets us discover the data they produce is
 
 ::
