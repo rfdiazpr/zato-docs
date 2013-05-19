@@ -477,7 +477,7 @@ Luckily for us, Zato introduces a unique concept of :doc:`SimpleIO (SIO) <../pro
 The idea is, you only declare that your service will return such and such elements
 and how they should be mapped onto a specific data format is up to Zato. 
 
-This way you can have one service producing XML in one channel and JSON in another.
+This way you can have a service producing XML in one channel and JSON in another.
 What's more, the input to build responses in a concrete data format can be one of:
 
 * dicts or dicts' subclasses, such as `Bunch <https://pypi.python.org/pypi/bunch>`_
