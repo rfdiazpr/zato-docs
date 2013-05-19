@@ -522,7 +522,7 @@ will be a boolean and so on. Naturally, this can be turned off.
                     
                     def handle(self):
                         
-                        request = dumps(self.request.payload)
+                        request = dumps(self.request.input)
                         
                         self.logger.info('Request: {}'.format(self.request.payload))
                         self.logger.info('Request type: {}'.format(type(self.request.payload)))
