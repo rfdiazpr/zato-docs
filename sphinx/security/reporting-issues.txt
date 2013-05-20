@@ -10,7 +10,7 @@ Send an email explaining the situation to security@zato.io with a subject line o
 
 You are encouraged to use this 
 `PGP key for contacting the developers securely <https://zato.io/support/zato-security.pgp.asc>`_,
-the key’s fingerprint is E4C58D88.
+the key’s fingerprint is C7D4 8725 1884 9294 E4EF  F6BD BCA1 151A E4C5 8D88.
 
 Within 72 hours you will be notified of its reception and we will work with you
 through e-mail and other means on resolving the issue.
