@@ -42,7 +42,7 @@ Entry points
 ~~~~~~~~~~~~
 
 A CA is driven entirely by its :doc:`CLI </admin/cli/index>`. It doesn't open
-any ports and can be acceseed solely through the command line.
+any ports and can be accessed solely through the command line.
 
 Load-balancer
 -------------
@@ -57,9 +57,9 @@ use client certificates.
 
 The agent writes to and reads from a load-balancer's UNIX socket.
 
-A load-balancer is the entry point to Zato servers. Clients never invoked servers
+A load-balancer is the entry point to Zato servers. Clients never invoke servers
 directly, all communication is always performed through the load-balancer,
-which is a `HAProxy <http://haproxy.1wt.eu/>`_ instance.
+which is an `HAProxy <http://haproxy.1wt.eu/>`_ instance.
 
 Exit points
 ~~~~~~~~~~~
@@ -89,7 +89,7 @@ Servers accept traffic flowing in from a load-balancer over HTTP through a TCP
 socket. Depending on the interface a server will bind to, it will also be possible
 to invoke a server directly using the said socket.
 
-Access to services exposed by Zato servers can be guarded a security definition,
+Access to services exposed by Zato servers can be guarded by a security definition,
 either HTTP Basic Auth, WS-Security or technical accounts.
 
 Servers accept traffic from a cluster's key/value database (Redis). Each connection
