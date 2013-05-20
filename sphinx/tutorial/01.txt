@@ -234,6 +234,37 @@ as many servers as you need.
 Invoking services with cURL
 ---------------------------
 
+.. note ::
+
+  At that point, you need to make sure that Redis and PostgreSQL are up,
+  running and they allow for Zato connection, i.e. the credentials you provided
+  earlier are valid.
+  
+  Assuming they both are on localhost, you can check it by:
+
+  ::  
+  
+    $ redis-cli INFO
+    redis_version:2.2.12
+    redis_git_sha1:00000000
+    [...]
+    $
+  
+  ::
+  
+    $ psql -h localhost -p 5432 -U zato1 -c "SELECT 1+1 as TEST"
+     test 
+    ------
+        2
+    (1 row)
+    
+    $
+  
+  If there's no output similar to what is shown above, the command
+  ./zato-qs-start.sh command below will succeed but you'll hit upon
+  issues later steps and you'll be scratching your head trying to figure out 
+  what went wrong.
+
 First off, let's start the thing we've just brought to this world:
 
 ::
