@@ -145,7 +145,8 @@ optionally using client certificates.
 The load-balancer is also used as an entry point for web admin to invoke a
 cluster's services, that is, the console never invokes any server directly,
 the access is always mediated through the load-balancer. Note, however,
-that the communication isn't encrypted.
+that when invoking services (as opposed to managing a load-balancer itself)
+the communication between web admin a load-balancer isn't encrypted.
 
 Web admin also allows one to update the load-balancer's config file, including
 the password needed to browse the latter's statistics, addresses of servers
