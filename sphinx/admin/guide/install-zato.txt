@@ -12,7 +12,7 @@ The current version of |version| has been tested on the following systems:
 .. note ::
 
   **Mac users** - please `visit GitHub <https://github.com/zatosource/zato/issues/41>`_ 
-  if you'd like to help make Zato run on OS X.
+  if you'd like to help with a homebrew formula to make Zato run on OS X.
 
 There is nothing Linux-specific to Zato's codebase and future Zato versions 
 will certainly support additional platforms and systems.
