@@ -9,13 +9,18 @@ The current version of |version| has been tested on the following systems:
 * `Ubuntu Linux 12.04 LTS <http://www.ubuntu.com/>`_
 * `Linux Mint 13 LTS <http://www.linuxmint.com/index.php>`_
 
-There is nothing Linux-specific to Zato's codebase and it's very likely 
-that a successful installation on MacOS or other systems 
-is possible. Please :doc:`let the project know <../../project/get-involved>`
+.. note ::
+
+  **Mac users** - please `visit GitHub <https://github.com/zatosource/zato/issues/41>`_ 
+  if you'd like to help make Zato run on OS X.
+
+There is nothing Linux-specific to Zato's codebase and future Zato versions 
+will certainly support additional platforms and systems.
+
+Please :doc:`let the project know <../../project/get-involved>`
 what you're using Zato on or where you'd like to see it run.
 
-.. note ::
-  Future Zato versions will most certainly support additional platforms and systems.
+
 
 Steps
 -----
