@@ -37,7 +37,7 @@ What makes Zato rock
   night debugging a horror system running on an exotic platform again
   
 * **Protocols**, **industry standards** and **data formats** - HTTP, JSON, SOAP, REST, AMQP,
-  JMS WebSphere MQ, ZeroMQ, SQL, FTP, security and much more
+  JMS WebSphere MQ, ZeroMQ, Redis, SQL, FTP, security and much more
   
 * **Commercial support** and **training** available. Thriving **community** around the project.
 
