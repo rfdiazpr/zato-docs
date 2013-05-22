@@ -30,7 +30,7 @@ written using :doc:`SimpleIO (SIO) <../progguide/sio>`, these can be either SOAP
 or JSON. For each response document, there is always a technical envelope - called :ref:`zato_env` - 
 defined and optionally, the actual business payload users are mostly interested in.
 
-The payload can either a single item or a list of items. For instance, fetching
+The payload can be either a single item or a list of items. For instance, fetching
 an AMQP connection's details will return the former while asking for a list of
 servers a particular service is deployed on will yield the latter.
 
