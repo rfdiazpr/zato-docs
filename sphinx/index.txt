@@ -28,7 +28,7 @@ What makes Zato unique
 
 * Using Python alone gives you a **massive productivity boost**
 
-* There's an **HA load-balancer**, **hot-deployment** and **hot-reconfiguration** almost everywhere - 
+* **HA load-balancer**, **hot-deployment** and **hot-reconfiguration** almost everywhere - 
   forget server restarts
   
 * Browser-based **GUI**, **CLI** and **API** - forget XML configuration

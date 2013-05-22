@@ -28,7 +28,8 @@ A rollout using service-sources.text can take a couple of forms:
     * Create a new directory
     * Copy Python modules containing the services to be released onto it,
       note that only flat Python modules can be used, no packages or archives
-      are allowed
+      are allowed (use :ref:`zato_extra_paths <admin-installing-services-zato_extra_paths>`
+      to install arbitrary Python packages)
     * Add the path to the directory to service-sources.txt
     * Repeat steps above for each server
     * Restart the servers
@@ -52,7 +53,8 @@ will be propagated automatically.
 
 A service which has been installed in such a way will survive the server's restart.
 
-Only flat Python modules can be hot-deployed.
+Only flat Python modules can be hot-deployed. (Use :ref:`zato_extra_paths <admin-installing-services-zato_extra_paths>`
+to install arbitrary Python code).
 
 server.conf's option beginning with 
 :ref:`hot_deploy.* <admin-guide-config-server-hot_deploy.pickup_dir>`
@@ -81,8 +83,6 @@ for a confirmation from.
 Hot-deploying from the web admin
 --------------------------------
 
-.. _admin-installing-services-zato_extra_paths:
-
 Flat Python packages can also be hot-deployed in a cluster using the web admin.
 
 .. image:: /gfx/admin-upload-package.png
@@ -95,9 +95,19 @@ for more information.
 zato_extra_paths
 ----------------
 
-Each Zato installation package contains a directory name zato_extra_paths,
+.. _admin-installing-services-zato_extra_paths:
+
+Each Zato installation package contains a directory named zato_extra_paths,
 :doc:`documented in its own chapter <./enabling-extra-libs>`,
 and whatever is put into zato_extra_paths will
-automatically appears on PYTHONPATH. This can be used in conjunction with 
+automatically appears on PYTHONPATH.
+
+This can be used in conjunction with 
 :ref:`service-sources.txt <admin-installing-services-service-sources.txt>` to install
 services from sources other than flat Python modules.
+
+This is a static method of installing the services and requires a restart
+(:doc:`zato stop <../../admin/cli/stop>` 
+&
+:doc:`zato start <../../admin/cli/start>`) of each server that had its zato_extra_paths updated.
+Note that for HTTP traffic a load-balancer will re-route traffic to other servers if one goes down.

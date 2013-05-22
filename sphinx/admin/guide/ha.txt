@@ -37,7 +37,7 @@ Clusters without connectors
 ---------------------------
 
 If there are no connectors and all the incoming traffic is HTTP, the frontend
-load-balancer will take care of making servers gets its own fair share of requests
+load-balancer will take care of making each server gets its own fair share of requests
 to handle. Each server contains the same services so if there are at least 2 servers
 running in such a cluster and each one can handle the full traffic in the case the other
 one should fail, it can be said that HA has been provided to a great extent.
@@ -47,7 +47,7 @@ one should fail, it can be said that HA has been provided to a great extent.
    
 However, in such a situation, the load-balancer itself becomes a part that has
 no redundant copy so it may be worth considering whether such a particular environment
-shouldn't be composed of at least 2 identical cluster with a load-balancing mechanism
+shouldn't be composed of at least 2 identical clusters with a load-balancing mechanism
 external to Zato to distribute the requests.
 
 .. image:: /gfx/ha-no-connectors-2-clusters.png
@@ -142,5 +142,5 @@ that Zato makes use of
 `PostgreSQL <https://www.postgresql.org/>`_
 or
 `Oracle <http://www.oracle.com/us/products/database/>`_. These elements should also
-be part of an HA plan however they should be
+be part of an HA plan, however how they should be
 tackled is something outside the scope of this discussion.
