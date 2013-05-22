@@ -20,6 +20,23 @@ Getting help
 * `Twitter <https://twitter.com/zatosource>`_ for quick questions and answers 
 
 
+
+Quick facts
+===========
+
+
+* Zato is an **open-source ESB** and **app server** written in **Python**
+
+* Using Python alone gives you a **massive productivity boost**
+
+* There's an **HA load-balancer**, **hot-deployment** and **hot-reconfiguration** almost everywhere - 
+  forget server restarts
+  
+* AJAX **GUI**, **CLI** and **API** - forget XML configuration
+
+* Written **by pragmatists for pragmatists** - you'll never have to spend an entire
+  night debugging a horror system running on an exotic platform again
+
 Introduction
 ============
 
