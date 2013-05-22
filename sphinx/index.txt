@@ -21,11 +21,10 @@ Getting help
 
 
 
-Quick facts
-===========
+What makes Zato rock
+====================
 
-
-* Zato is an **open-source ESB** and **app server** written in **Python**
+* **Open-source ESB** and **app server** written in **Python**
 
 * Using Python alone gives you a **massive productivity boost**
 
@@ -36,6 +35,11 @@ Quick facts
 
 * Written **by pragmatists for pragmatists** - you'll never have to spend an entire
   night debugging a horror system running on an exotic platform again
+  
+* **Protocols**, **industry standards** and **data formats** - HTTP, JSON, SOAP, REST, AMQP,
+  JMS WebSphere MQ, ZeroMQ, SQL, FTP, security and much more
+  
+* **Commercial support** and **training** available. Thriving **community** around the project.
 
 Introduction
 ============
