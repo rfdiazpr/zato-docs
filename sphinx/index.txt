@@ -31,7 +31,7 @@ What makes Zato unique
 * There's an **HA load-balancer**, **hot-deployment** and **hot-reconfiguration** almost everywhere - 
   forget server restarts
   
-* AJAX **GUI**, **CLI** and **API** - forget XML configuration
+* AJAX browser **GUI**, **CLI** and **API** - forget XML configuration
 
 * Written **by pragmatists for pragmatists** - you'll never have to spend an entire
   night debugging a horror system running on an exotic platform again
