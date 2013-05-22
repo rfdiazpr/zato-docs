@@ -21,8 +21,8 @@ Getting help
 
 
 
-What makes Zato rock
-====================
+What makes Zato unique
+======================
 
 * **Open-source ESB** and **app server** written in **Python**
 
