@@ -27,7 +27,8 @@ Plain HTTP and SOAP channels are exposed via Zato servers directly.
 One of the key features of Zato is that precisely the same service can be exposed over 
 multiple channels without any changes to the service's implementation. That is,
 once the service has been written and deployed, it's only a matter of a server's
-configuration to make a service available through, say, AMQP in addition to ZeroMQ.
+configuration to make a service available through, say, AMQP in addition to ZeroMQ
+or HTTP.
 
 Regardless of which channel a service was invoked over, the very same 
 :doc:`request and response objects <./request-response>`
@@ -42,3 +43,14 @@ can make use of the same API for producing responses using
 :doc:`XML <./xml>`
 or 
 :doc:`any other data format <./other-formats>`.
+
+.. note ::
+
+  In short, **no programming is needed** to expose a service over any channels
+  supported. **No config files** need to be edited. It's only a matter of 
+  filling out a form or two in the 
+  :doc:`web admin <../web-admin/intro>`
+  (or using the 
+  :doc:`API <../public-api/intro>`
+  if you prefer 
+  to do it programmatically) to make a service run through multiple channels.
