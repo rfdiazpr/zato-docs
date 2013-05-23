@@ -1,0 +1,99 @@
+======================
+What is an ESB anyway?
+======================
+
+The ESB acronym expands to an Enterprise Service Bus but that alone probably
+doesn't tell you anything so here's more information in plain English, without
+much corporate speak.
+
+-----------------
+A shorter version
+-----------------
+
+It is software that lets you:
+
+* Save time
+* Save money
+* Spend friday evenings with your friends and family instead of answering 
+  calls from higher-ups demanding information why your system is down *again*
+
+---------------
+The whole truth
+---------------
+
+Think what happens when you log into your bank's frontend application:
+
+1) Your name is displayed
+2) The account balance is there
+3) Your credit and debit cards are shown
+4) A list of your mutual funds can be there
+5) You get a pre-computed list of attractive loans you might be interested in
+
+Now, it's very likely that all that pieces belong to different systems and applications,
+each of which exposes data through a service of some sort (HTTP, JSON, XML, SOAP, FTP, CSV, 
+doesn't really matter): 
+
+1) is from a CRM running on Linux and Oracle
+2) is from a COBOL system on z/OS mainframe
+3) is said to be from a mainframe but they're too tightlipped to tell you anything, only that
+   they prefer CSV over anything else
+4) is from a mix of PHP and Ruby running on Windows
+5) is from PostgreSQL, Python and Java running on Linux and Solaris
+
+The question now is, how do you make the frontend app talk to 1-5? **Well, you don't.**
+
+This is the fundamental basis of making sure such environments can scale above
+a couple of systems. **You don't let them talk to each other directly**.
+
+In the diagram below, each invocation of a service another system offers is
+represented in a line of different width or style:
+
+.. image:: /gfx/intro/mess1.png
+   :alt:
+
+Note that we didn't even show you an higher-level processes (App1 invokes App2
+and either App3 or App5 depending on whether an earlier response from App 6
+was successful etc.). But still some questions become apparent.
+   
+How can you plan rollouts? How do you coordinate updates or planned downtimes?
+Each application is managed by different teams, vendors or departments and half
+of the original developers have left already.
+
+If you think you can handle 6 applications, how about 30?
+
+How about 400? How about 2000? (We'll spare you a diagram)
+
+
+------------------------------
+How can you clean up the mess?
+------------------------------
+
+-------------------------------------------
+An ESB is for banks and similar only, then?
+-------------------------------------------
+
+--------------------------------------------------------
+But I heard SOA was all about XML, SOAP and web services
+--------------------------------------------------------
+
+Yes, this is what certain people would like you to believe. 
+
+If people ir vendors you worked with did things such as BASE64-encoding a CSV file and sending
+it over to you in a SAML2-secured SOAP message then it's understood how you might
+come under such an impression.
+
+XML, SOAP and web services have their uses but like anything, they can be misused.
+
+SOA is about a clean and manageable architecture. That a particular service might
+use SOAP or not is pretty much irrelevant. As an architectural approach, SOA
+will still be valid even if no SOAP service will be used at all.
+
+If an architect designs a beautiful building, they can't really do much
+about the color of the paint people choose inside.
+
+So no, SOA is not much about XML, SOAP and web services. You are encouraged to point
+your colleagues to this article to make them really understand what it really is.
+
+------------------------
+So what is Zato exactly?
+------------------------

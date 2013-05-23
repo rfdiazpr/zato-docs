@@ -45,6 +45,7 @@ Introduction
 ============
 
     * **Basic concepts:**
+      :doc:`What is an ESB anyway? <intro/esb>` |
       :doc:`High-level overview <intro/overview-high-level>` | 
       :doc:`Technical overview <intro/overview-tech>`
 
