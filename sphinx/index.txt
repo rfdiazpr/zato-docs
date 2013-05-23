@@ -45,7 +45,7 @@ Introduction
 ============
 
     * **Basic concepts:**
-      :doc:`What ESB and SOA are anyway <intro/esb-soa>` |
+      :doc:`No-nonsense intro to ESB and SOA<intro/esb-soa>` |
       :doc:`High-level overview <intro/overview-high-level>` | 
       :doc:`Technical overview <intro/overview-tech>`
 

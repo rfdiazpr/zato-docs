@@ -7,7 +7,7 @@ Oriented Architecture.
 
 But if you're reading this chapter, there's a chance these definitions
 don't tell you too much so here's more information in plain English, without
-much corporate speak.
+too much of corporate speak.
 
 -----------------
 A shorter version
@@ -65,9 +65,9 @@ on 10 physical servers so there are at least 60 components talking to each other
 
 Some questions become apparent.   
    
-How can you plan rollouts? How do you coordinate updates or planned downtimes?
-Each application is managed by different teams, vendors or departments and half
-of the original developers have left already.
+How can you plan rollouts? How do you coordinate updates or planned downtimes if
+each application is managed by different teams, vendors or departments and half
+of the original developers have left already?
 
 If you think you can handle 6 applications, how about 30 of them?
 
@@ -86,7 +86,7 @@ First thing is to honestly admit that the situation has gotten out of hand. This
 allows one to look for a remedy without feeling too much guilt. OK, it happened,
 you didn't know any better, but there's a chance it can be cleaned up.
 
-This many mean an organizational change in an approach to IT but another step is 
+This may mean an organizational change in an approach to IT but another step is 
 to recall that systems and applications are not created merely
 to push data around. They're meant to support business processes, regardless of what
 your business is, banking, audio recordings, radiolocation devices, anything. 
@@ -121,7 +121,7 @@ Is it reusable?     No, not really. Although it does allow for constructing high
                     such as statistics for a whole year, it's clear that there won't be much interest for it
                     in 2018.
 Is it atomic?       Most likely, yes. If there are similar services for other quarters, it will be possible
-                    get an insight into the whole year 
+                    to get an insight into the whole year 
 How to make it IRA? * Make it accept arbitrary start and stop dates instead of being limited to one quarter only
                     * Make it accept arbitrary applications, not only the portal, let the application you're
                       interested in be an input parameter, it cannot be hard-coded to the portal only
@@ -148,7 +148,7 @@ How to make it IRA? * Split it into smaller pieces. Think what describes a custo
 Variable            Notes
 =================== =============================================================================================
 Environment         A mobile telco
-Functionality       Refilling a card in a billing system
+Functionality       Refilling a prepaid card in a billing system
 Is it interesting?  Extremely so. Everyone wants to use it, through text messages, IVR, IM, portals, gift cards
                     etc.
 Is it reusable?     Very reusable, it can take part in all sort of higher-level processes 
@@ -158,7 +158,7 @@ Is it atomic?       Yes, from the calling application's point of view, it can ei
 How to make it IRA? It already is IRA.
 =================== =============================================================================================
 
-If you've done any programming in the last 30 years it is now very clear that
+If you've done any programming in the last 50 or so years it is now very clear that
 exposing a service is precisely like exposing an API in one part of code to another.
 The only difference is that you're not dealing with submodules of a single system,
 you're operating on a level of an entire environment of disparate systems.
@@ -229,14 +229,14 @@ Your IT people will loathe the system and the management will first tolerate an
 ESB as a new kid on the block but later on it will become a laughing stock. 
 "What, that new silver bullet? Hahaha".
 
-Such consequences are inevitable if an ESB is not a part of a bigger plan of actually
+Such consequences are inevitable if an ESB is not part of a bigger plan of actually
 moving things forward.
    
 -------------------------------------------
 An ESB is for banks and similar only, then?
 -------------------------------------------
 
-Not at all, no. It is a good choice for any situation requiring multiple data sources
+Not at all, no. It is a good choice in any situation requiring multiple data sources
 and multiple access methods to co-operate in order to achieve an interesting result.
 
 For instance, grabbing latest reading from thermal sensors and publishing it into
@@ -285,14 +285,14 @@ a success.
 
 Other topics, not covered here, include, but are not limited to:
 
-* How to get support from the management
+* How to get support from the management for an ESB
 * How to gather SOA architects and analytical teams
 * Introducing a Canonical Data Model (CDM) in an organization
 * Key Performance Indicators (KPI) - now that you have a common and unified
   method of providing services across systems, you should start to monitor
-  and evaluate what is really provided to you
+  and evaluate what is really delivered to you
 * Business Process Management (BPM) - how and when to choose a BPM platform
-  to orchectrate the services
+  to orchestrate the services
 * What to do with systems that have no APIs? E.g. should an ESB
   access their databases directly (answer - it depends, there's no golden rule)
 
@@ -300,9 +300,9 @@ Other topics, not covered here, include, but are not limited to:
 So what is Zato exactly?
 ------------------------
 
-`Zato <https://zato.io>`_ is an ESB and application server. It is open-source
-software, with commercial and community support, written in `Python <http://python.org>`_,
-a programming language famous for its ease of use and productivity. 
+`Zato <https://zato.io>`_ is an ESB and application server written in Python.
+It is open-source software, with commercial and community support available.
+And `Python <http://python.org>`_, is a programming language famous for its ease of use and productivity. 
 
 Using Python and Zato means you are more productive and need to spend less time
 on nuisances.
@@ -310,11 +310,11 @@ on nuisances.
 Zato was written **by pragmatists for pragmatists**. It's not yet another system
 quickly stitched together by a vendor in the wave of ESB/SOA hype. 
 
-It was born out of practical experience in putting out fires caused by such systems.
-In fact, Zato authors spent so much time on dealing with such horror environments
+In fact, it was born out of practical experience in putting out fires caused by such systems.
+Indeed, Zato authors spent so much time on dealing with such horror environments
 that they practically became immune to any fires.
 
 This is the forge out of which Zato came into existence and that's why it
 can offer productivity and ease of use unparalleled by other seemingly similar solutions.
 
-See you `there <https://zato.io>`_!
+See you :doc:`there <../index>`!
