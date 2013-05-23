@@ -1,20 +1,24 @@
-======================
-What is an ESB anyway?
-======================
+===========================
+What ESB and SOA are anyway
+===========================
 
-The ESB acronym expands to an Enterprise Service Bus but that alone probably
-doesn't tell you anything so here's more information in plain English, without
+The ESB acronym expands to an Enterprise Service Bus. SOA stands for Service
+Oriented Architecture. 
+
+But if you're reading this chapter, there's a chance these definitions
+don't tell you too much so here's more information in plain English, without
 much corporate speak.
 
 -----------------
 A shorter version
 -----------------
 
-It is software that lets you:
+ESB is software, and SOA is an architectural approach, that let you:
+
 
 * Save time
 * Save money
-* Spend friday evenings with your friends and family instead of answering 
+* Spend Friday evenings with your friends and family instead of answering 
   calls from higher-ups demanding information why your system is down *again*
 
 ---------------
@@ -43,7 +47,7 @@ doesn't really matter):
 The question now is, how do you make the frontend app talk to 1-5? **Well, you don't.**
 
 This is the fundamental basis of making sure such environments can scale above
-a couple of systems. **You don't let them talk to each other directly**.
+a handful of systems. **You don't let them talk to each other directly**.
 
 In the diagram below, each invocation of a service another system offers is
 represented in a line of different width or style:
@@ -51,26 +55,202 @@ represented in a line of different width or style:
 .. image:: /gfx/intro/mess1.png
    :alt:
 
-Note that we didn't even show you an higher-level processes (App1 invokes App2
+Note that we didn't even show you any higher-level processes (App1 invokes App2
 and either App3 or App5 depending on whether an earlier response from App 6
-was successful etc.). But still some questions become apparent.
+was successful so that App4 can at a later time grab data produced by App 2 but
+only if App 1 doesn't forbit it etc.).
+
+Also note that we're not talking about servers - each of the systems may run
+on 10 physical servers so there are at least 60 components talking to each other.
+
+Some questions become apparent.   
    
 How can you plan rollouts? How do you coordinate updates or planned downtimes?
 Each application is managed by different teams, vendors or departments and half
 of the original developers have left already.
 
-If you think you can handle 6 applications, how about 30?
+If you think you can handle 6 applications, how about 30 of them?
 
-How about 400? How about 2000? (We'll spare you a diagram)
+.. image:: /gfx/intro/mess2.png
+   :alt:
 
+Can you deal with 400? How about 2000? (We'll spare you a diagram)
+
+There's a good name for that situation. It's called a mess.
 
 ------------------------------
 How can you clean up the mess?
 ------------------------------
 
+First thing is to honestly admit that the situation has gotten out of hand. This
+allows one to look for a remedy without feeling too much guilt. OK, it happened,
+you didn't know any better, but there's a chance it can be cleaned up.
+
+This many mean an organizational change in an approach to IT but another step is 
+to recall that systems and applications are not created merely
+to push data around. They're meant to support business processes, regardless of what
+your business is, banking, audio recordings, radiolocation devices, anything. 
+
+Once you got that two clearly stated you can start thinking of building 
+or redesigning your systems around services. 
+
+A service is something interesting, reuable and atomic that is offered by one
+system to another. This  is the shortest meaningful definition possible.
+
+If a given functionality of a system fullfils these 3 requiremenents, that is, if it's:
+
+* **I** nteresting
+
+* **R** eusable
+
+* **A** tomic
+
+then there's a very good chance it could and should be exposed as a service to
+other systems.
+
+Let's discuss this IRA approach through a couple of examples
+
+=================== =============================================================================================
+Variable            Notes
+=================== =============================================================================================
+Environment         An electricity company's CRM
+Functionality       Returning a list of customers that were active in a self-service portal in Q3 2012
+Is it interesting?  Yes, quite interesting. This can be used to generated all sorts of useful reports
+                    and statistics.
+Is it reusable?     No, not really. Although it does allow for constructing higher-level constructs,
+                    such as statistics for a whole year, it's clear that there won't be much interest for it
+                    in 2018.
+Is it atomic?       Most likely, yes. If there are similar services for other quarters, it will be possible
+                    get an insight into the whole year 
+How to make it IRA? * Make it accept arbitrary start and stop dates instead of being limited to one quarter only
+                    * Make it accept arbitrary applications, not only the portal, let the application you're
+                      interested in be an input parameter, it cannot be hard-coded to the portal only
+=================== =============================================================================================
+
+=================== =============================================================================================
+Variable            Notes
+=================== =============================================================================================
+Environment         e-commerce site
+Functionality       Returning each piece of information regarding a given customer ever collected
+Is it interesting?  Well, yes. If you have access to the whole of it you'll be always able to choose what you
+                    really need.
+Is it reusable?     Funnily enough, not exactly. There will be very few applications, if any, that will be
+                    interested in each and every bit of data.
+Is it atomic?       Definitely not. This monster functionality is bound to be logically composed of dozens
+                    of smaller parts.
+How to make it IRA? * Split it into smaller pieces. Think what describes a customer - they have their addresses,
+                      phones, favourite products, contact methods they prefer and so on - each of these
+                      should be turned into an independent service. 
+                    * Use ESB to create composite services out of the atomic ones  
+=================== =============================================================================================
+
+=================== =============================================================================================
+Variable            Notes
+=================== =============================================================================================
+Environment         A mobile telco
+Functionality       Refilling a card in a billing system
+Is it interesting?  Extremely so. Everyone wants to use it, through text messages, IVR, IM, portals, gift cards
+                    etc.
+Is it reusable?     Very reusable, it can take part in all sort of higher-level processes 
+Is it atomic?       Yes, from the calling application's point of view, it can either refill a card or not. That
+                    a billing system will implement this functionality as a series of steps is irrelevant.
+                    From a business perspective it's an atomic, undividable service offered by a billing system.
+How to make it IRA? It already is IRA.
+=================== =============================================================================================
+
+If you've done any programming in the last 30 years it is now very clear that
+exposing a service is precisely like exposing an API in one part of code to another.
+The only difference is that you're not dealing with submodules of a single system,
+you're operating on a level of an entire environment of disparate systems.
+
+---------------------------------------------
+Making services available on an ESB in an SOA
+---------------------------------------------
+
+Now that you know that systems don't exchange information directly and 
+you understand what a service is, you can start making use of an ESB.
+
+.. image:: /gfx/intro/esb-ok.png
+   :alt:
+   
+It now becomes the job of ESB to expose and invoke services of the integrated
+systems. That way, in most cases, only one access method, one interface, needs 
+to be defined between each system and the ESB.
+
+So, like in the diagram above, you have 8 systems, there will be 16 interfaces
+(one in each direction) to create, maintain, manage and take care of.
+
+Without an ESB you'd have 56 interfaces to think of and deal with (assuming each
+systems talk with each of other ones).
+
+40 interfaces less means less time wasted and more money saved. That's one of
+the reasons why your Fridays will be less strained.
+
+This fact alone should make you strongly consider introducing an ESB.
+
+If a system undergoes a rewrite, change of ownership, gets split between departments
+or vendors, it will a duty of ESB folk to conform with the change. None of the
+other systems will even notice it because their interface with ESB will be left
+intact.
+
+When you start breathe IRA services on a daily basis you can begin to think
+of composite ones.
+
+Remeber the 'give-me-everything-you-can-about-that-customer' kind of service above? 
+
+It wasn't a good idea to create it but you will sometimes
+have to deal with client applications that need aggregated and summarized information.
+It will be ESB people that will be responsible for picking the best atomic services
+to build a composite one for that particular client system requiring this particular
+set of composite data.
+
+With time the whole organization will begin to understand that it's no more about
+database tables, files, batches, functions, routines or records. This will be 
+about an architecture centered on interesting, reusable and atomic services
+applications offer each another.
+
+It takes time, patience and coordinated effort but it is doable.
+
+-------------------------
+But what watch out for...
+-------------------------
+
+The best way to ruin the whole concept of SOA is to roll out an ESB and expect
+that matters will smooth out themselves. While still being a terrific idea, 
+simply introducing an ESB won't achieve that much, unfortunately.
+
+In the best case, sweeping something under the carpet, like in the diagram below,
+will achieve nothing.
+
+.. image:: /gfx/intro/esb-mess.png
+   :alt:
+
+Your IT people will loathe the system and the management will first tolerate an
+ESB as a new kid on the block but later on it will become a laughing stock. 
+"What, that new silver bullet? Hahaha".
+
+Such consequences are inevitable if an ESB is not a part of a bigger plan of actually
+moving things forward.
+   
 -------------------------------------------
 An ESB is for banks and similar only, then?
 -------------------------------------------
+
+Not at all, no. It is a good choice for any situation requiring multiple data sources
+and multiple access methods to co-operate in order to achieve an interesting result.
+
+For instance, grabbing latest reading from thermal sensors and publishing it into
+several channels, like e-mail alerts and an IPhone app does sound like a good fit
+for an integration platform.
+
+Periodically consulting whether all instances of a critical application are all up
+and running a preconfigured script if they're not while sendind a text message
+to admins also sounds just fine.
+
+Everything that needs integration in a clear, well-defined environment is possibly
+a good fit for an ESB service but as always, deciding whether something really is 
+a dream fit will follow from one's experience. Naturally, the people behind Zato
+`can help <https://zato.io/support>`_.
 
 --------------------------------------------------------
 But I heard SOA was all about XML, SOAP and web services
@@ -78,9 +258,9 @@ But I heard SOA was all about XML, SOAP and web services
 
 Yes, this is what certain people would like you to believe. 
 
-If people ir vendors you worked with did things such as BASE64-encoding a CSV file and sending
-it over to you in a SAML2-secured SOAP message then it's understood how you might
-come under such an impression.
+If people or vendors you worked with did things such as BASE64-encoding a CSV file and sending
+it over to you in a SAML2-secured SOAP message then it's quite understandable 
+how you might develop such an impression.
 
 XML, SOAP and web services have their uses but like anything, they can be misused.
 
@@ -91,9 +271,50 @@ will still be valid even if no SOAP service will be used at all.
 If an architect designs a beautiful building, they can't really do much
 about the color of the paint people choose inside.
 
-So no, SOA is not much about XML, SOAP and web services. You are encouraged to point
-your colleagues to this article to make them really understand what it really is.
+So no, SOA is not much about XML, SOAP and web services. These can be used too
+but it's not the whole story of SOA. You are encouraged to point your colleagues
+to this article to make them really understand what SOA is about.
+
+----------------
+And there's more
+----------------
+
+This chapter covers only the very basics but should still give you a strong
+understanding how ESB and SOA should look like and what is needed to achieve
+a success.
+
+Other topics, not covered here, include, but are not limited to:
+
+* How to get support from the management
+* How to gather SOA architects and analytical teams
+* Introducing a Canonical Data Model (CDM) in an organization
+* Key Performance Indicators (KPI) - now that you have a common and unified
+  method of providing services across systems, you should start to monitor
+  and evaluate what is really provided to you
+* Business Process Management (BPM) - how and when to choose a BPM platform
+  to orchectrate the services
+* What to do with systems that have no APIs? E.g. should an ESB
+  access their databases directly (answer - it depends, there's no golden rule)
 
 ------------------------
 So what is Zato exactly?
 ------------------------
+
+`Zato <https://zato.io>`_ is an ESB and application server. It is open-source
+software, with commercial and community support, written in `Python <http://python.org>`_,
+a programming language famous for its ease of use and productivity. 
+
+Using Python and Zato means you are more productive and need to spend less time
+on nuisances.
+
+Zato was written **by pragmatists for pragmatists**. It's not yet another system
+quickly stitched together by a vendor in the wave of ESB/SOA hype. 
+
+It was born out of practical experience in putting out fires caused by such systems.
+In fact, Zato authors spent so much time on dealing with such horror environments
+that they practically became immune to any fires.
+
+This is the forge out of which Zato came into existence and that's why it
+can offer productivity and ease of use unparalleled by other seemingly similar solutions.
+
+See you `there <https://zato.io>`_!
