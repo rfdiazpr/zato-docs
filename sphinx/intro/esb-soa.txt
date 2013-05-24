@@ -33,7 +33,7 @@ Think what happens when you log into your bank's frontend application:
 4) A list of your mutual funds can be there
 5) You get a pre-computed list of attractive loans you might be interested in
 
-Now, it's very likely that all that pieces belong to different systems and applications,
+Now, it's very likely that all these pieces belong to different systems and applications,
 each of which exposes data through an interface of some sort (HTTP, JSON, XML, SOAP, FTP, CSV, 
 doesn't really matter): 
 
@@ -61,7 +61,7 @@ was successful so that App4 can at a later time grab data produced by App 2 but
 only if App 1 doesn't forbit it etc.).
 
 Also note that we're not talking about servers - each of the systems may run
-on 10 physical servers so there are at least 60 components talking to each other.
+on 10 physical servers so there will be at least 60 physical components talking to each other.
 
 Still, some questions become apparent.   
    
@@ -91,7 +91,7 @@ to recall that systems and applications are not created merely
 to push data around. They're meant to support business processes, regardless of what
 your business is, banking, audio recordings, radiolocation devices, anything. 
 
-Once you got that two clearly stated you can start thinking of building 
+Once you got these two clearly stated you can start thinking of building 
 or redesigning your systems around services. 
 
 A service is something interesting, reusable and atomic that is offered by one
@@ -109,7 +109,7 @@ If a given functionality of a system fullfils these 3 requiremenents, that is, i
 then there's a very good chance it could and should be exposed as a service to
 other systems, though never directly.
 
-Let's discuss this IRA approach through a couple of examples
+Let's discuss this IRA approach through a couple of examples.
 
 =================== =============================================================================================
 Variable            Notes
@@ -149,12 +149,12 @@ How to make it IRA? * Split it into smaller pieces. Think what describes a custo
 Variable            Notes
 =================== =============================================================================================
 Environment         Any CRM anywhere
-Functionality       Updating column CUST_AR_ZN in table C_NAZ_AJ after someone created an account
-Is it interesting?  Absolutely no. This is a CRM's internal function. No one in the sane world wants to deal
+Functionality       Updating column CUST_AR_ZN in table C_NAZ_AJ after someone creates an account
+Is it interesting?  Absolutely not. This is a CRM's internal function. No one in the sane world wants to deal
                     with such low-level functionality.
 Is it reusable?     Yes, probably. An account can be created through multiple channels so this seems
                     something reusable. 
-Is it atomic?       Most likely, yes. It's just a simple update of one column in one table.
+Is it atomic?       Seems so, yes. It's just a simple update of one column in one table.
 How to make it IRA? Don't even attempt to turn it into a service. It is not interesting. No one wants to think
                     of particular columns and tables in one system. This is a CRM's intricate detail, so even
                     though it is reusable and atomic, you must not offer a service on top of it. It is your,
@@ -217,7 +217,7 @@ Remeber the 'give-me-everything-you-can-about-that-customer' kind of service abo
 
 It wasn't a good idea to create it but you will sometimes
 have to deal with client applications that need aggregated and summarized information.
-It will be ESB people that will be responsible for picking the best atomic services
+It will be ESB people who will be responsible for picking the best atomic services
 to build a composite one for that particular client system requiring this particular
 set of composite data.
 
@@ -277,7 +277,7 @@ Yes, this is what certain people would like you to believe.
 
 If people or vendors you worked with did things such as BASE64-encoding a CSV file and sending
 it over to you in a SAML2-secured SOAP message then it's quite understandable 
-how you might develop such an impression.
+how you might've developed such an impression.
 
 XML, SOAP and web services have their uses but like anything, they can be misused.
 
@@ -286,12 +286,12 @@ use SOAP or not is pretty much irrelevant. As an architectural approach, SOA
 will still be valid even if no SOAP service will be used at all.
 
 If an architect designs a beautiful building, they can't really do much
-about the color of the paint people choose inside.
+about the color of the paint people choose for the interiors.
 
 So no, SOA is not much about XML, SOAP and web services. These can be used too
-but it's not the whole story of SOA.
+but it's not the whole story behind it.
 
-You are encouraged to kindly direct your strayed colleagues to this article to make them really understand what SOA is about.
+You are encouraged to kindly direct your strayed colleagues to this article to make them understand what SOA really is about.
 
 ----------------
 And there's more

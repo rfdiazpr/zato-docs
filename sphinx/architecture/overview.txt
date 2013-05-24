@@ -17,7 +17,7 @@ Zato is composed of several components that cooperate with the aim of exposing
                                          execution of scheduler jobs.
 :doc:`SQL ODB<./sql-odb>`                Operational Database for storing configuration that is usually static and can take
                                          advantage of SQL's relational model
-:doc:`Redis<./redis>`                    The key/value DB used for highly dynamic and rapidly changing data
+:doc:`Redis<./redis>`                    A NoSQL key/value DB used for highly dynamic and rapidly changing data
 :doc:`Certificate Authority (CA)<./ca>`  An additional component, an SSL CA used during the development,
                                          mainly with the goal of supporting 
                                          :doc:`zato quickstart </admin/cli/quickstart-create>` clusters
