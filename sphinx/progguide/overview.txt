@@ -6,7 +6,7 @@ You
 :ref:`services <progguide-what-is-a-service>`
 and 
 :ref:`applications <progguide-what-is-an-application>`
-using Python, a very-high level,
+using Python, a very high-level,
 full featured and highly productive, programming language, that allows you to
 implement any solution of any scale and size, from tiny ones to the very
 largest.

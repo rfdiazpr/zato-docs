@@ -31,7 +31,7 @@ a modern server which lets one handle large numbers of incoming connections.
 
 External connectors - used for AMQP, WebSphere MQ and ZeroMQ messaging - use
 custom-written main loops written using
-`Pika <https://pika.readthedocs.org/>`_, 
+`Pika <https://pika.readthedocs.org/>`_/`Kombu <https://pypi.python.org/pypi/kombu>`_, 
 `Spring Python <http://static.springsource.org/spring-python/1.2.x/sphinx/html/jms.html>`_, 
 and 
 `ZeroMQ <http://www.zeromq.org/>`_

@@ -76,7 +76,7 @@ Monitoring services
 -------------------
 
 * The load-balancer exposes an HTTP monitoring service, on /zato-lb-alive by default,
-  that can be used by external tools to checks whether the component is still alive, e.g.
+  that can be used by external tools to check whether the component is still alive, e.g.
   by checking if HTTP response code is 200:
   
   .. code-block:: text
@@ -103,7 +103,7 @@ Monitoring services
       $
 
 * Each server exposes a /zato/ping service that also can be used by external
-  tools to checks whether the server is still alive, e.g.
+  tools to check whether the server is still alive, e.g.
   by checking if HTTP response code is 200 as well:
   
   .. code-block:: text
