@@ -5,9 +5,9 @@ Overview
 --------
 
 This chapter defines Zato's attack surface, these parts of a cluster's 
-resources that can be used by an attacker to attack Zato. 
+resources that can be used by an adversary to attack Zato. 
 
-The attack surface is discussed in terms of entry and exit points in order to give
+The attack surface is discussed in terms of entry and exit points in order to give you
 an understanding of how an attacker could gain access to a cluster. Some notes
 apply to more than one Zato component whereas certain aspects are specific to
 a particular component.
