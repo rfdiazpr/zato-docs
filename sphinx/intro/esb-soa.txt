@@ -58,7 +58,7 @@ represented in a line of different width or style:
 Note that we didn't even show you any higher-level processes (App1 invokes App2
 and either App3 or App5 depending on whether an earlier response from App 6
 was successful so that App4 can at a later time grab data produced by App 2 but
-only if App 1 doesn't forbit it etc.).
+only if App 1 doesn't forbid it etc.).
 
 Also note that we're not talking about servers - each of the systems may run
 on 10 physical servers so there will be at least 60 physical components talking to each other.
@@ -98,7 +98,7 @@ A service is something interesting, reusable and atomic that is offered by one
 system to other applications willing to make a good use of it, but it's never
 exposed directly in a point-to-point manner. This is the shortest meaningful definition possible.
 
-If a given functionality of a system fullfils these 3 requiremenents, that is, if it's:
+If a given functionality of a system fulfils these 3 requirements, that is, if it's:
 
 * **I** nteresting
 
@@ -213,7 +213,7 @@ intact.
 When you start breathe IRA services on a daily basis you can begin to think
 of composite ones.
 
-Remeber the 'give-me-everything-you-can-about-that-customer' kind of service above? 
+Remember the 'give-me-everything-you-can-about-that-customer' kind of service above? 
 
 It wasn't a good idea to create it but you will sometimes
 have to deal with client applications that need aggregated and summarized information.
