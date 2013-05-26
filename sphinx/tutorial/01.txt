@@ -123,15 +123,31 @@ First thing needed is installing Zato itself. There's
 :doc:`a short chapter <../admin/guide/install-zato>`
 on doing just that
 in the administration guide and you're encouraged to get through it now
-but basically, this amounts to 3 things:
+but basically, this amounts to 3 or 4 things:
 
 * Download and unpack `the latest version <https://zato.io/download/zato-latest.tar.bz2>`_
+* (OS X only) :ref:`Patch the installer <admin-guide-install-zato-steps>`
 * Run ./install.sh in INSTALL_DIR
 * Add INSTALL_DIR/bin to $PATH
 
-You'll also need access to Redis and a PostgreSQL instance. You could also
-use Oracle instead of Postgres but to keep it simple, let's use the latter for the
-tutorial.
+Zato 1.1 will require no patching on OS X, this is only a temporary measure.
+
+.. note ::
+
+  You'll also need access to `Redis <http://redis.io>`_ and 
+  a `PostgreSQL <http://postgresql.org>`_ instance. You could also
+  use `Oracle <http://www.oracle.com/us/products/database/>`_ instead of Postgres
+  but to keep it simple, let's use the latter for the tutorial.
+  
+  * Install Redis and Postgres binaries and start both
+  * Redis needs no users but Postgres does so issue the following commands
+  
+    ::
+    
+      $ sudo su - postgres # OS X users may skip it
+      $ createuser --no-superuser --no-createdb --no-createrole zato1
+      $ createdb --owner=zato1 zato1
+      $ psql --dbname zato1 --command="ALTER ROLE zato1 WITH PASSWORD 'zato1'"
 
 Done yet? OK, so let's create a quickstart cluster, which is a sort of a cluster
 created by running the 

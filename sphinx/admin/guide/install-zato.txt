@@ -8,19 +8,15 @@ The current version of |version| has been tested on the following systems:
 
 * `Ubuntu Linux 12.04 LTS <http://www.ubuntu.com/>`_
 * `Linux Mint 13 LTS <http://www.linuxmint.com/index.php>`_
+* `OS X <https://en.wikipedia.org/wiki/OS_X>`_
 
-.. note ::
-
-  **Mac users** - please `visit GitHub <https://github.com/zatosource/zato/issues/41>`_ 
-  if you'd like to help with a homebrew formula to make Zato run on OS X.
-
-There is nothing Linux-specific to Zato's codebase and future Zato versions 
+There is nothing Linux or OS X-specific to Zato's codebase and future Zato versions 
 will certainly support additional platforms and systems.
 
 Please :doc:`let the project know <../../project/get-involved>`
 what you're using Zato on or where you'd like to see it run.
 
-
+.. _admin-guide-install-zato-steps:
 
 Steps
 -----
@@ -29,6 +25,9 @@ Steps
 * Ensure you have root/sudo permissions on that system
 * Make sure the system will let the installer establish outgoing connections to the Internet,
   this is needed in order to download all the dependencies required
+
+* (OS X only) Install `homebrew <http://brew.sh/>`_
+  
 * Download 
   `the installation package <https://zato.io/download/zato-1.0.tar.bz2>`_, e.g.:
 
@@ -41,6 +40,22 @@ Steps
   .. parsed-literal::
   
     $ tar -xjf zato-|version|.tar.bz2 && cd zato-|version|
+    
+* (OS X only) Patch the installer
+
+    .. parsed-literal::
+    
+      $ mv install.sh install.sh.bak
+      $ mv buildout.cfg buildout.cfg.bak
+      $ mv versions.cfg versions.cfg.bak
+      $ curl -s https://gist.github.com/dsuch/5653464/raw -o buildout.cfg
+      $ curl -s https://gist.github.com/dsuch/5653471/raw -o versions.cfg
+      $ curl -s https://gist.github.com/dsuch/5653474/raw -o install.sh
+      $ chmod u+x install.sh
+      
+  .. note ::
+ 
+      Zato 1.1 will require no patching on OS X, this is only a temporary measure.
     
 * Run the installer 
 
@@ -90,10 +105,19 @@ Steps
   
 * Add zato-1.0/bin to $PATH so that the zato command is available in the shell, e.g.
 
-  .. parsed-literal::
-  
-    zato-1.0$ echo export 'PATH=$PATH:'$(pwd)/bin >> ~/.bashrc
-    zato-1.0$ source ~/.bashrc
+  * Linux:
+
+    .. parsed-literal::
+    
+      zato-1.0$ echo export 'PATH=$PATH:'$(pwd)/bin >> ~/.bashrc
+      zato-1.0$ source ~/.bashrc
+      
+  * OS X:
+
+    .. parsed-literal::
+    
+      zato-1.0$ echo export 'PATH=$PATH:'$(pwd)/bin >> ~/.profile
+      zato-1.0$ source ~/.profile
     
 * Confirm the zato command can be executed
 
