@@ -257,7 +257,11 @@ Port                               Notes
 
 .. image:: /gfx/tutorial/quickstart-ports.png
 
-This is only a tutorial now, but this can be a good approach to easily 
+The load-balancer and servers can all run on different hosts, but to keep focused
+on basic things first, the tutorial uses a quickstart cluster which installs everything
+on localhost.
+
+And although this is a tutorial only, this can be a good approach to easily 
 create any serious Zato environment later on. Just create a quickstart
 cluster, rename it to 'dev1' or similarly and start 
 :doc:`adding and configuring <../../admin/guide/install-config/overview>`

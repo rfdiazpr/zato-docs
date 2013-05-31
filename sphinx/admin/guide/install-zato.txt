@@ -4,6 +4,9 @@ Installing Zato binaries
 Overview
 --------
 
+The same binaries need to be installed in each operation system that any Zato component
+- such as servers - will be running on.
+
 The current version of |version| has been tested on the following systems:
 
 * `Ubuntu Linux 12.04 LTS <http://www.ubuntu.com/>`_
