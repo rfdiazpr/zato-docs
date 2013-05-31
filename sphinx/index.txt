@@ -26,7 +26,7 @@ What makes Zato unique
 
 * **Open-source ESB** and **app server** written in **Python**
 
-* Using Python alone gives you a **massive productivity boost**
+* Using Python alone gives you a **productivity boost**
 
 * **HA load-balancer**, **hot-deployment** and **hot-reconfiguration** almost everywhere - 
   forget server restarts
@@ -37,7 +37,7 @@ What makes Zato unique
   night debugging a horror system running on an exotic platform again
   
 * **Protocols**, **industry standards** and **data formats** - HTTP, JSON, SOAP, REST, AMQP,
-  JMS WebSphere MQ, ZeroMQ, Redis, SQL, FTP, security and much more
+  JMS WebSphere MQ, ZeroMQ, Redis, SQL, FTP, security and more
   
 * **Commercial support** and **training** available. Thriving **community** around the project.
 

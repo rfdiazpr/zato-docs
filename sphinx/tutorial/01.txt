@@ -11,7 +11,7 @@ This tutorial will guide you through a process of creating a simple service that
 will be integrated with 3 external applications over HTTP and Zero MQ using
 JSON or XML as a data exchange format.
 
-But what is a service anyway? 
+But what is a service? 
 
 To paraphrase the :doc:`programming guide <../progguide/overview>`,
 a service is a piece of functionality that does something useful and interesting
@@ -60,6 +60,22 @@ console for admins to use.
 If you haven't done it yet, take a look at Zato's 
 :doc:`architecture <../architecture/overview>`
 to get an understanding of how all the various pieces play together.
+
+Also note that **Zato is a middleware and backend server** as explained in the 
+:doc:`ESB/SOA introduction <../intro/esb-soa>`
+and in 
+:doc:`other <../intro/overview-high-level>`
+:doc:`chapters <../intro/overview-tech>`.
+
+This means you should use `Django <https://www.djangoproject.com/>`_ or another
+project of your liking to create
+frontend applications with and Zato will be very happy to integrate your application
+with any other.
+
+But, while technically it is possible (it's all HTTP and other
+protocols Zato supports, after all), you won't write HTML, JS or CSS with Zato.
+
+Zato should be used to create systems of systems, not for frontend programming.
 
 What will the tutorial achieve, exactly?
 ----------------------------------------
@@ -210,7 +226,7 @@ even  a human-readable one, should still be changed, you can do it using the
 :doc:`zato update password <../../admin/cli/update-password>`
 command.
 
-What was created by invoking zato quickstart create, you ask?
+What was created by invoking zato quickstart create:
 
 * A development CA
 * 2 servers
@@ -252,8 +268,8 @@ Invoking services with cURL
 
 .. note ::
 
-  At that point, you need to make sure that Redis and PostgreSQL are up,
-  running and they allow for Zato connections, i.e. the credentials you provided
+  At that point, **you need to make sure that Redis and PostgreSQL are up,
+  running and they allow for Zato connections**, i.e. the credentials you provided
   earlier are valid.
   
   Assuming they both are on localhost, you can check it by:
@@ -280,6 +296,8 @@ Invoking services with cURL
   ./zato-qs-start.sh command below will succeed but you'll hit upon
   issues in later steps and you'll be scratching your head trying to figure out 
   what went wrong.
+  
+  **Again, please make sure Redis and PostgreSQL will allow Zato to establish connections.**
 
 First off, let's start the thing we've just brought to this world:
 
@@ -353,7 +371,7 @@ Save the following code as my_service.py
   this is where the actual action takes place, this is the heart of a service
   
 * :ref:`log_input <progguide-write-service-log_input>`
-  is one of the helper methods a service have access to. As you can imagine,
+  is one of the helper methods a service has access to. As you can imagine,
   this one dumps all the input data into server logs.
     
 Code saved? Good, now we can hot-deploy it. 

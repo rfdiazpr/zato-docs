@@ -4,13 +4,28 @@
 SimpleIO (SIO)
 ==============
 
-SIO is a feature unique to Zato that allows one to develop services in a way
+SIO is a feature of Zato that allows one to develop services in a way
 that is reusable across multiple data formats and transports. That is, a service
 can be written once but it's still possible to expose it, for instance, via XML
 through AMQP, and via JSON over HTTPS.
 
 Once a service has been deployed, no code changes nor restarts are needed to make it
 available over various access methods.
+
+.. note ::
+
+  SIO is not meant to be used when arbitrarily complex requests and responses
+  are needed. You can either return flat objects, such as a bunch of attributes
+  or a list of objects, such a list of groups of attributes. In practice,
+  this covers 90% of use-cases but you  need to remember that you can't return
+  nested structures.
+  
+  Naturally, when not using SIO, Zato does allow for accepting and returning 
+  any documents in 
+  :doc:`JSON <./json>`, 
+  :doc:`XML <./xml>`
+  or indeed, in
+  :doc:`any data format <./other-formats>`.
 
 .. note ::
 
@@ -195,20 +210,6 @@ output_optional  A tuple of names, they can be returned optionally. Note that wh
                  
 default_value    A value to use when an optional element wasn't in the request.                                                None
 ================ ============================================================================================================= ===============
-
-.. note ::
-
-  SIO is not meant to be used when arbitrarily complex requests and responses
-  are needed. You can either return flat objects, such as a bunch of attributes
-  or a list of objects, such a list of groups of attributes. In practice,
-  this covers 90% of use-cases. 
-  
-  Naturally, when not using SIO, Zato does allow for accepting and returning 
-  any documents in 
-  :doc:`JSON <./json>`, 
-  :doc:`XML <./xml>`
-  or indeed, in
-  :doc:`any data format <./other-formats>`.
 
 Returning a list of elements
 ----------------------------

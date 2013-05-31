@@ -49,7 +49,7 @@ Servers know how to secure and to make use of resources secured with
 and
 :doc:`technical accounts <../web-admin/security/tech-account>`.
 
-Zato's unique 
+Zato's
 :doc:`SimpleIO (SIO) <./sio>`
 mechanism allows you to write code once while still being able to expose
 it through multiple protocols and interfaces without any code change nor restarts.
