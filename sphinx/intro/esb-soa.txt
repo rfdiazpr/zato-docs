@@ -9,18 +9,6 @@ But if you're reading this chapter, there's a chance these definitions
 don't tell you too much so here's more information in plain English, without
 too much of corporate speak.
 
------------------
-A shorter version
------------------
-
-ESB is software, and SOA is an architectural approach, that let you:
-
-
-* Save time
-* Save money
-* Spend Friday evenings with your friends and family instead of answering 
-  calls from higher-ups demanding information why your system is down *again*
-
 ---------------
 The whole truth
 ---------------
