@@ -8,13 +8,10 @@ The current version of |version| has been tested on the following systems:
 
 * `Ubuntu Linux 12.04 LTS <http://www.ubuntu.com/>`_
 * `Linux Mint 13 LTS <http://www.linuxmint.com/index.php>`_
+* `Fedora 18 <https://fedoraproject.org/>`_
+* `OS X <https://en.wikipedia.org/wiki/OS_X>`_
 
-.. note ::
-
-  **Mac users** - please `visit GitHub <https://github.com/zatosource/zato/issues/41>`_ 
-  if you'd like to help with a homebrew formula to make Zato run on OS X.
-
-There is nothing Linux-specific to Zato's codebase and future Zato versions 
+There is nothing OS X or Linux-specific to Zato's codebase and future Zato versions 
 will certainly support additional platforms and systems.
 
 Please :doc:`let the project know <../../project/get-involved>`
@@ -30,11 +27,11 @@ Steps
 * Make sure the system will let the installer establish outgoing connections to the Internet,
   this is needed in order to download all the dependencies required
 * Download 
-  `the installation package <https://zato.io/download/zato-1.0.tar.bz2>`_, e.g.:
+  `the installation package <https://zato.io/download/zato-1.1.tar.bz2>`_, e.g.:
 
   .. parsed-literal::
       
-    $ wget -c https://zato.io/download/zato-1.0.tar.bz2 .
+    $ wget -c https://zato.io/download/zato-1.1.tar.bz2 .
   
 * Decompress the package and enter the newly created directory, e.g.:
 
@@ -46,14 +43,14 @@ Steps
 
   .. parsed-literal::
   
-    zato-1.0$ ./install.sh
+    zato-1.1$ ./install.sh
 
   There will be a lot of output written out to stdout and on a successful completion
   you will see OK printed out, e.g.
   
   .. parsed-literal::
   
-    zato-1.0$ ./install.sh 
+    zato-1.1$ ./install.sh 
     [sudo] password for user: 
     Reading package lists... Done
     Building dependency tree
@@ -62,12 +59,12 @@ Steps
     .. (snipped output)
     ..
     
-    patch: in zato-1.0/code/eggs/ ..
-    patch: processing 1/1:	 zato-1.0/code/eggs/ ..
-    patch: successfully patched zato-1.0/code/eggs/ ..
+    patch: in zato-1.1/code/eggs/ ..
+    patch: processing 1/1:	 zato-1.1/code/eggs/ ..
+    patch: successfully patched zato-1.1/code/eggs/ ..
 
     OK
-    zato-1.0$
+    zato-1.1$
 
   Depending on how fast the system is and on the quality of the
   Internet connectivity, it will take at least several minutes for the installer
@@ -88,20 +85,20 @@ Steps
   :doc:`the docs <../../index>`?
 
   
-* Add zato-1.0/bin to $PATH so that the zato command is available in the shell, e.g.
+* Add zato-1.1/bin to $PATH so that the zato command is available in the shell, e.g.
 
   .. parsed-literal::
   
-    zato-1.0$ echo export 'PATH=$PATH:'$(pwd)/bin >> ~/.bashrc
-    zato-1.0$ source ~/.bashrc
+    zato-1.1$ echo export 'PATH=$PATH:'$(pwd)/bin >> ~/.bashrc
+    zato-1.1$ source ~/.bashrc
     
 * Confirm the zato command can be executed
 
   .. parsed-literal::
   
-    zato-1.0$ zato --version
+    zato-1.1$ zato --version
     Zato |version|
-    zato-1.0$
+    zato-1.1$
   
 * That's all, Zato has been successfully installed in the system. 
   You can now visit :doc:`the main documentation index <../../index>` and have 
