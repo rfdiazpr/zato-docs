@@ -9,18 +9,6 @@ But if you're reading this chapter, there's a chance these definitions
 don't tell you too much so here's more information in plain English, without
 too much of corporate speak.
 
------------------
-A shorter version
------------------
-
-ESB is software, and SOA is an architectural approach, that let you:
-
-
-* Save time
-* Save money
-* Spend Friday evenings with your friends and family instead of answering 
-  calls from higher-ups demanding information why your system is down *again*
-
 ---------------
 The whole truth
 ---------------
@@ -58,14 +46,14 @@ represented in a line of different width or style:
 Note that we didn't even show you any higher-level processes (App1 invokes App2
 and either App3 or App5 depending on whether an earlier response from App 6
 was successful so that App4 can at a later time grab data produced by App 2 but
-only if App 1 doesn't forbit it etc.).
+only if App 1 doesn't forbid it etc.).
 
 Also note that we're not talking about servers - each of the systems may run
 on 10 physical servers so there will be at least 60 physical components talking to each other.
 
 Still, some questions become apparent.   
    
-How can you plan rollouts? How do you coordinate updates or planned downtimes if
+How to separate interfaces? How can you plan rollouts? How do you coordinate updates or planned downtimes if
 each application is managed by different teams, vendors or departments and half
 of the original developers have left already?
 
@@ -74,7 +62,12 @@ If you think you can handle 6 applications, how about 30 of them?
 .. image:: /gfx/intro/mess2.png
    :alt:
 
-Can you deal with 400? How about 2000? (We'll spare you a diagram)
+Can you deal with 400? How about 2000? Each application
+can be a unique ecosystem requiring 10 servers or other devices to run on,
+so this is 20k moving parts spread over continents and all sort of technical
+or cultural boundaries, all that parts constantly and incessantly wishing to
+exchange messages and to chatter with each other all the time 
+without any let-up, ever. (We’ll spare you a diagram)
 
 There's a good name for that situation. It's called a mess.
 
@@ -98,7 +91,7 @@ A service is something interesting, reusable and atomic that is offered by one
 system to other applications willing to make a good use of it, but it's never
 exposed directly in a point-to-point manner. This is the shortest meaningful definition possible.
 
-If a given functionality of a system fullfils these 3 requiremenents, that is, if it's:
+If a given functionality of a system fulfils these 3 requirements, that is, if it's:
 
 * **I** nteresting
 
@@ -213,7 +206,7 @@ intact.
 When you start breathe IRA services on a daily basis you can begin to think
 of composite ones.
 
-Remeber the 'give-me-everything-you-can-about-that-customer' kind of service above? 
+Remember the 'give-me-everything-you-can-about-that-customer' kind of service above? 
 
 It wasn't a good idea to create it but you will sometimes
 have to deal with client applications that need aggregated and summarized information.
@@ -225,6 +218,11 @@ With time the whole organization will begin to understand that it's no more abou
 database tables, files, batches, functions, routines or records. This will be 
 about an architecture centered on interesting, reusable and atomic services
 applications offer to ESB.
+
+No longer will people think that applications and system send things over one to 
+another. They will see ESB as a universal access gate to interesting services their
+own systems can make use of. And they won't even bother with checking who exactly provides
+what, their systems will only deal with ESB.
 
 It takes time, patience and coordinated effort but it is doable.
 
@@ -261,7 +259,7 @@ several channels, like e-mail alerts and an IPhone app does sound like a good fi
 for an integration platform.
 
 Periodically consulting and monitoring whether all instances of a critical application are all up
-and if any is not, running a preconfigured script while sendind a text message
+and if any is not, running a preconfigured script while sending a text message
 to admins also sounds just fine.
 
 Everything that needs integration in a clear, well-defined environment is possibly
@@ -319,7 +317,8 @@ Other topics, not covered here, include, but are not limited to:
 So what is Zato exactly?
 ------------------------
 
-`Zato <https://zato.io>`_ is an ESB and application server written in Python.
+`Zato <https://zato.io>`_ is an ESB and application server written in Python
+and can be used for building middleware and backend systems.
 It is open-source software with commercial and community support available.
 And `Python <http://python.org>`_ is a programming language famous for its ease of use and productivity. 
 

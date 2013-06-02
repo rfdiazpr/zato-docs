@@ -165,6 +165,8 @@ main.gunicorn_logger_class
 
 Same as `gunicorn's logger_class <http://docs.gunicorn.org/en/latest/configure.html#logger-class>`_.
 
+.. _admin-guide-config-server-main.deployment_lock_expires:
+
 main.deployment_lock_expires
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@
 

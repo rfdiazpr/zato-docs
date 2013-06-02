@@ -37,7 +37,7 @@ Database name       Database name
 User                Database user
 Pool size           Connection pool size. Always start with 1 and increase only if it's not enough in practice.
 Extra               *(Optional)* Any extra parameters passed directly into 
-                    `SQLAlchemy's create_engine function <https://bitbucket.org/sqlalchemy/sqlalchemy/src/d0aaaf28c64075e1d7565920766d3b7254c47ebb/lib/sqlalchemy/engine/__init__.py?at=default>`_
+                    `SQLAlchemy's create_engine function <https://bitbucket.org/zzzeek/sqlalchemy/src/832d657854f6fca8a1925e89f0ad20d260dc9e45/lib/sqlalchemy/engine/__init__.py?at=master>`_
                     as its keyword arguments. A connection won't be available if any of the keywords is not a valid SQLAlchemy one.
 =================== ===============================================================================================================================================================================
 

@@ -1,10 +1,20 @@
-zato component-version
-============================
+zato check-config
+=================
 
 Overview
 ------------
 
-Shows a Zato component's version. This is the Zato version this component has been created with.
+Performs sanity checks against a Zato component. Currently limited to servers only.
+
+The command checks whether:
+
+* SQL ODB connection is configured properly
+* Redis connection is configured properly
+
+.. note ::
+  
+  You are encouraged to `submit new ideas on GitHub <https://github.com/zatosource/zato/issues>`_
+  regarding what additional checks to add in future versions of the command. Thanks!
 
 Subcommands
 ------------
@@ -25,11 +35,12 @@ Usage
 
 ::
 
-    $ zato component-version [-h] [--store-log] [--verbose] [--store-config]
+    $ zato check-config [-h] [--store-log] [--verbose] [--store-config]
         path
         
 ::
 
-    $ zato component-version ~/zato1/server1/
-    1.1
+    $ zato check-config ~/zato1/server1/
+    SQL ODB connection OK
+    Redis connection OK
     $

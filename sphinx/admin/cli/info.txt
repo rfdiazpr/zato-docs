@@ -75,7 +75,7 @@ Usage
     |              Key               |                       Value                        |
     +================================+====================================================+
     | component_details              | {"created_user_host": "zato@prod3", "version":     |
-    |                                | "1.0", "component": "WEB_ADMIN",                  |
+    |                                | "1.1", "component": "WEB_ADMIN",                  |
     |                                | "created_ts": "2013-01-08T22:15:32.528449"}        |
     +--------------------------------+----------------------------------------------------+
     | component_full_path            | /home/zato1/prod/web-admin                        |
@@ -111,7 +111,7 @@ Usage
     |              Key               |                       Value                        |
     +================================+====================================================+
     | component_details              | {"created_user_host": "zato@prod3", "version":     |
-    |                                | "1.0", "component": "WEB_ADMIN",                  |
+    |                                | "1.1", "component": "WEB_ADMIN",                  |
     |                                | "created_ts": "2013-01-08T22:15:32.528449"}        |
     +--------------------------------+----------------------------------------------------+
     | component_full_path            | /home/zato1/prod/web-admin                        |

@@ -26,7 +26,7 @@ What makes Zato unique
 
 * **Open-source ESB** and **app server** written in **Python**
 
-* Using Python alone gives you a **massive productivity boost**
+* Using Python alone gives you **increased productivity**
 
 * **HA load-balancer**, **hot-deployment** and **hot-reconfiguration** almost everywhere - 
   forget server restarts
@@ -37,9 +37,9 @@ What makes Zato unique
   night debugging a horror system running on an exotic platform again
   
 * **Protocols**, **industry standards** and **data formats** - HTTP, JSON, SOAP, REST, AMQP,
-  JMS WebSphere MQ, ZeroMQ, Redis, SQL, FTP, security and much more
+  JMS WebSphere MQ, ZeroMQ, Redis, SQL, FTP, security and more
   
-* **Commercial support** and **training** available. Thriving **community** around the project.
+* **Commercial support** and **training** available. Growing **community** around the project.
 
 Introduction
 ============
@@ -170,7 +170,8 @@ Administration guide
       :doc:`High availability<admin/guide/ha>` |
       :doc:`Capacity planning<admin/guide/capacity>` |
       :doc:`Installing services<admin/guide/installing-services>` |
-      :doc:`Enabling extra libraries <admin/guide/enabling-extra-libs>`
+      :doc:`Enabling extra libraries <admin/guide/enabling-extra-libs>` |
+      :doc:`Migrating between releases <admin/guide/migrating>`
       
 Architecture
 ============
@@ -262,7 +263,8 @@ Public SOAP and JSON server API
 Zato, the open-source project
 ==============================
 
-    * :doc:`Getting involved<project/get-involved>` | :doc:`Diversity statement<project/diversity>`
+    * :doc:`Getting involved<project/get-involved>` | :doc:`Diversity statement<project/diversity>` |
+      :doc:`Changelog<project/changelog>`
     
 .. toctree::
    :hidden:

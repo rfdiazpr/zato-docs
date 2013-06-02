@@ -11,7 +11,7 @@ This tutorial will guide you through a process of creating a simple service that
 will be integrated with 3 external applications over HTTP and Zero MQ using
 JSON or XML as a data exchange format.
 
-But what is a service anyway? 
+But what is a service? 
 
 To paraphrase the :doc:`programming guide <../progguide/overview>`,
 a service is a piece of functionality that does something useful and interesting
@@ -60,6 +60,22 @@ console for admins to use.
 If you haven't done it yet, take a look at Zato's 
 :doc:`architecture <../architecture/overview>`
 to get an understanding of how all the various pieces play together.
+
+Also note that **Zato is a middleware and backend server** as explained in the 
+:doc:`ESB/SOA introduction <../intro/esb-soa>`
+and in 
+:doc:`other <../intro/overview-high-level>`
+:doc:`chapters <../intro/overview-tech>`.
+
+This means you should use `Django <https://www.djangoproject.com/>`_ or another
+project of your liking to create
+frontend applications with and Zato will be very happy to integrate your application
+with any other.
+
+But, while technically it is possible (it's all HTTP and other
+protocols Zato supports, after all), you won't write HTML, JS or CSS with Zato.
+
+Zato should be used to create systems of systems, not for frontend programming.
 
 What will the tutorial achieve, exactly?
 ----------------------------------------
@@ -123,15 +139,28 @@ First thing needed is installing Zato itself. There's
 :doc:`a short chapter <../admin/guide/install-zato>`
 on doing just that
 in the administration guide and you're encouraged to get through it now
-but basically, this amounts to 3 things:
+but basically, this amounts to 3 or 4 things:
 
 * Download and unpack `the latest version <https://zato.io/download/zato-latest.tar.bz2>`_
 * Run ./install.sh in INSTALL_DIR
 * Add INSTALL_DIR/bin to $PATH
 
-You'll also need access to Redis and a PostgreSQL instance. You could also
-use Oracle instead of Postgres but to keep it simple, let's use the latter for the
-tutorial.
+.. note ::
+
+  You'll also need access to `Redis <http://redis.io>`_ and 
+  a `PostgreSQL <http://postgresql.org>`_ instance. You could also
+  use `Oracle <http://www.oracle.com/us/products/database/>`_ instead of Postgres
+  but to keep it simple, let's use the latter for the tutorial.
+  
+  * Install Redis and Postgres binaries and start both
+  * Redis needs no users but Postgres does so issue the following commands
+  
+    ::
+    
+      $ sudo su - postgres # OS X users may skip it
+      $ createuser --no-superuser --no-createdb --no-createrole zato1
+      $ createdb --owner=zato1 zato1
+      $ psql --dbname zato1 --command="ALTER ROLE zato1 WITH PASSWORD 'zato1'"
 
 Done yet? OK, so let's create a quickstart cluster, which is a sort of a cluster
 created by running the 
@@ -194,7 +223,7 @@ even  a human-readable one, should still be changed, you can do it using the
 :doc:`zato update password <../../admin/cli/update-password>`
 command.
 
-What was created by invoking zato quickstart create, you ask?
+What was created by invoking zato quickstart create:
 
 * A development CA
 * 2 servers
@@ -225,7 +254,11 @@ Port                               Notes
 
 .. image:: /gfx/tutorial/quickstart-ports.png
 
-This is only a tutorial now, but this can be a good approach to easily 
+The load-balancer and servers can all run on different hosts, but to keep focused
+on basic things first, the tutorial uses a quickstart cluster which installs everything
+on localhost.
+
+And although this is a tutorial only, this can be a good approach to easily 
 create any serious Zato environment later on. Just create a quickstart
 cluster, rename it to 'dev1' or similarly and start 
 :doc:`adding and configuring <../../admin/guide/install-config/overview>`
@@ -236,34 +269,32 @@ Invoking services with cURL
 
 .. note ::
 
-  At that point, you need to make sure that Redis and PostgreSQL are up,
-  running and they allow for Zato connection, i.e. the credentials you provided
+  At this point, **you need to make sure that Redis and PostgreSQL are up,
+  running and they allow for Zato connections**, i.e. the credentials you provided
   earlier are valid.
   
-  Assuming they both are on localhost, you can check it by:
+  You can check it by running these commands:
 
   ::  
   
-    $ redis-cli INFO
-    redis_version:2.2.12
-    redis_git_sha1:00000000
-    [...]
+    $ zato check-config server1
+    SQL ODB connection OK
+    Redis connection OK
     $
   
   ::
   
-    $ psql -h localhost -p 5432 -U zato1 -c "SELECT 1+1 as TEST"
-     test 
-    ------
-        2
-    (1 row)
-    
+    $ zato check-config server2
+    SQL ODB connection OK
+    Redis connection OK
     $
   
-  If there's no output similar to what is shown above, the command
-  ./zato-qs-start.sh command below will succeed but you'll hit upon
-  issues later steps and you'll be scratching your head trying to figure out 
+  If there's no output as shown above, the 
+  ./zato-qs-start.sh command below will not succeed and if you continue you'll hit upon
+  issues in later steps so you'll be scratching your head trying to figure out 
   what went wrong.
+  
+  **Again, please make sure Redis and PostgreSQL will allow Zato to establish connections.**
 
 First off, let's start the thing we've just brought to this world:
 
@@ -337,7 +368,7 @@ Save the following code as my_service.py
   this is where the actual action takes place, this is the heart of a service
   
 * :ref:`log_input <progguide-write-service-log_input>`
-  is one of the helper methods a service have access to. As you can imagine,
+  is one of the helper methods a service has access to. As you can imagine,
   this one dumps all the input data into server logs.
     
 Code saved? Good, now we can hot-deploy it. 

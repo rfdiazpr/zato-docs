@@ -4,6 +4,9 @@ Installing Zato binaries
 Overview
 --------
 
+The same binaries need to be installed in each operation system that any Zato component
+- such as servers - will be running on.
+
 The current version of |version| has been tested on the following systems:
 
 * `Ubuntu Linux 12.04 LTS <http://www.ubuntu.com/>`_
@@ -11,13 +14,13 @@ The current version of |version| has been tested on the following systems:
 * `Fedora 18 <https://fedoraproject.org/>`_
 * `OS X <https://en.wikipedia.org/wiki/OS_X>`_
 
-There is nothing OS X or Linux-specific to Zato's codebase and future Zato versions 
-will certainly support additional platforms and systems.
+There is nothing Linux or OS X-specific to Zato's codebase and future Zato versions 
+will certainly add installers for additional platforms and systems.
 
 Please :doc:`let the project know <../../project/get-involved>`
-what you're using Zato on or where you'd like to see it run.
+what operating system you're using Zato on or where you'd like to see it run.
 
-
+.. _admin-guide-install-zato-steps:
 
 Steps
 -----
@@ -26,6 +29,9 @@ Steps
 * Ensure you have root/sudo permissions on that system
 * Make sure the system will let the installer establish outgoing connections to the Internet,
   this is needed in order to download all the dependencies required
+
+* (OS X only) Install `homebrew <http://brew.sh/>`_
+  
 * Download 
   `the installation package <https://zato.io/download/zato-1.1.tar.bz2>`_, e.g.:
 
@@ -87,10 +93,26 @@ Steps
   
 * Add zato-1.1/bin to $PATH so that the zato command is available in the shell, e.g.
 
+
   .. parsed-literal::
   
     zato-1.1$ echo export 'PATH=$PATH:'$(pwd)/bin >> ~/.bashrc
     zato-1.1$ source ~/.bashrc
+
+  * Linux:
+
+    .. parsed-literal::
+    
+      zato-1.1$ echo export 'PATH=$PATH:'$(pwd)/bin >> ~/.bashrc
+      zato-1.1$ source ~/.bashrc
+      
+  * OS X:
+
+    .. parsed-literal::
+    
+      zato-1.1$ echo export 'PATH=$PATH:'$(pwd)/bin >> ~/.profile
+      zato-1.1$ source ~/.profile
+
     
 * Confirm the zato command can be executed
 

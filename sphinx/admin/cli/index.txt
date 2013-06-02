@@ -28,10 +28,11 @@ Commands can be run in a batch mode by using the combination of the
 Summary of commands
 ---------------------
 
-=================================================== ===========
+=================================================== ==============================================================================
 Name                                                Description
-=================================================== ===========
+=================================================== ==============================================================================
 :doc:`zato ca<./ca>`                                Certificate Authority (CA) management
+:doc:`zato check-config<./check-config>`            Sanity checks against a component's config (currently limited to servers only)
 :doc:`zato component-version<./component-version>`  Shows a Zato component's version
 :doc:`zato create<./create>`                        Creates a Zato object
 :doc:`zato decrypt<./decrypt>`                      Decrypts secrets using a Zato component's private key
@@ -44,7 +45,7 @@ Name                                                Description
 :doc:`zato start<./start>`                          Starts a Zato component
 :doc:`zato stop<./stop>`                            Stops a Zato component
 :doc:`zato update<./update>`                        Updates parts of a Zato component
-=================================================== ===========
+=================================================== ==============================================================================
 
 .. _cli_index_common_options:
 
