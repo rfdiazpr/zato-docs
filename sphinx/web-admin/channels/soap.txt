@@ -6,10 +6,10 @@ Overview
 
 Used to create, update, delete and browse through plain SOAP channels.
 
-Unlike :doc:`plain HTTP channel <./soap>` that can accept data in any format,
+Unlike :doc:`plain HTTP channels <./plain-http>` that can accept data in any format,
 SOAP ones expect it always to be a SOAP XML.
 
-* Menu path: Connections -> Channels -> Plain HTTP
+* Menu path: Connections -> Channels -> SOAP
 * Example address: http://localhost:8183/zato/http-soap/?cluster=1&connection=channel&transport=soap
 
 .. image:: /gfx/web-admin/channels/soap.png

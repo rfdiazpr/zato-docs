@@ -6,7 +6,7 @@ Overview
 
 Used to create, update, delete and browse through AMQP channels.
 
-Each channels represents a connection through which AMQP broker messages are 
+Each channel represents a connection through which AMQP broker messages are 
 received by Zato. A given service is invoked for each message received.
 
 Creating or updating a channel (re-)establishes a connection to an AMQP broker
