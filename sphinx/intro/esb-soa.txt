@@ -2,8 +2,8 @@
 What ESB and SOA are anyway
 ===========================
 
-The ESB acronym expands to an Enterprise Service Bus. SOA stands for Service
-Oriented Architecture. 
+The ESB acronym and a related one - SOA - can be a source of confustion. ESB expands to
+an Enterprise Service Bus. SOA stands for Service Oriented Architecture. 
 
 But if you're reading this chapter, there's a chance these definitions
 don't tell you too much so here's more information in plain English, without
@@ -22,7 +22,7 @@ Think what happens when you log into your bank's frontend application:
 5) You get a pre-computed list of attractive loans you might be interested in
 
 Now, it's very likely that all these pieces belong to different systems and applications,
-each of which exposes data through an interface of some sort (HTTP, JSON, XML, SOAP, FTP, CSV, 
+each of which exposes data through an interface of some sort (HTTP, JSON, AMQP, XML, SOAP, FTP, CSV, 
 doesn't really matter): 
 
 1) is from a CRM running on Linux and Oracle
