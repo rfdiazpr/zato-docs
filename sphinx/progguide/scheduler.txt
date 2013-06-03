@@ -31,11 +31,14 @@ and
 attributes. 
 Note that are service hooks specific to scheduler jobs available.
 
-.. note ::
+When creating a new job definition, you can specify extra data. In run-time,
+this will accessible to a service in its :ref:`request.payload <progguide-req-resp-req>`
+attribute.
 
-   When creating a new job definition, you can specify extra data. In run-time,
-   this will accessible to a service in its :ref:`request.payload <progguide-req-resp-req>`
-   attribute.
+Receving a message sent by the scheduler blocks the current server thread for as long
+as it's needed to invoke the service. You need to make sure the cluster has enough 
+:ref:`main.gunicorn_workers <admin-guide-config-server-main.gunicorn_workers>`
+running in parallel to handle the load.
    
 .. image:: /gfx/progguide/scheduler-job1.png
    :align: center

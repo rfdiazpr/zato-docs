@@ -20,6 +20,11 @@ Reminding a couple of facts will make it easier to discuss the matter:
 * Each cluster has a single HTTP load-balancer in front of it so the traffic
   is always distribute fairly over all servers
 
+* Receving a message sent by the scheduler blocks the current server thread for as long
+  as it's needed to invoke the service. You need to make sure the cluster has enough 
+  :ref:`main.gunicorn_workers <admin-guide-config-server-main.gunicorn_workers>`
+  running in parallel to handle the load.
+
 * If a cluster establishes any AMQP, JMS WebSphere MQ or ZeroMQ connections,
   these are always managed by connector processes - there are as many connectors
   as there are channels and outgoing connections using these 3 technologies.
@@ -30,8 +35,17 @@ Reminding a couple of facts will make it easier to discuss the matter:
   Connectos are never redundant, there is always one copy of a given connector
   process in a given cluster.
   
+  When a connector receives interal request to update its configuration, it is stopped
+  for a moment and doesn't process any business messages.
+  
   Should the connector server ever die, another server will pick up the former's duties
   and the connector processes will be restarted on the system the latter is on.
+  
+  .. note ::
+  
+    To emphasize the point again - **if you don't think of it in advance** as suggested
+    below, **connectors may become a SPOF (Single Point Of Failure)**. You need to approach
+    it with an understanding of implications.
   
 Clusters without connectors
 ---------------------------
