@@ -7,7 +7,7 @@ SimpleIO (SIO)
 SIO is a feature of Zato that allows one to develop services in a way
 that is reusable across multiple data formats and transports. That is, a service
 can be written once but it's still possible to expose it, for instance, via XML
-through AMQP, and via JSON over HTTPS.
+through AMQP, and via JSON over HTTP.
 
 Once a service has been deployed, no code changes nor restarts are needed to make it
 available over various access methods.
