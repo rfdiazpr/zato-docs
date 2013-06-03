@@ -55,10 +55,10 @@ metadata will be stored in Redis.
 Distributed locks
 -----------------
 
-Some processes taking place withing cluster need to be performed by one
+Some processes taking place within a cluster need to be performed by one
 of multiple processes or servers only. For instance, there are typically multiple
 gunicorn workers supporting a Zato server and they all start up asynchronously.
-Only one of them should be allowed to deploy services deployed on a server 
+Only one of them should be allowed to deploy services assigned to a server 
 and Redis is used to implement a distributed lock for that purpose.
 
 .. _arch-redis-broker:
@@ -89,3 +89,4 @@ Data dictionaries are a feature that allows one to easily map values between
 applications. For instance, a CRM might use ISO 4217 currency names (US dollar is
 USD) while an accounting application could use numerical values (US dollar is 840).
 A data dictionary is a mapping between the two and it's stored in Redis for a quick retrieval.
+Such data is kept in Redis.

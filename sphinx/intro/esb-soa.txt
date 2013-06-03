@@ -2,7 +2,7 @@
 What ESB and SOA are anyway
 ===========================
 
-The ESB acronym and a related one - SOA - can be a source of confustion. ESB expands to
+The ESB acronym and a related one - SOA - can be a source of confusion. ESB expands to
 an Enterprise Service Bus. SOA stands for Service Oriented Architecture. 
 
 But if you're reading this chapter, there's a chance these definitions

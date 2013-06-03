@@ -75,7 +75,7 @@ with any other.
 But, while technically it is possible (it's all HTTP and other
 protocols Zato supports, after all), you won't write HTML, JS or CSS with Zato.
 
-Zato should be used to create systems of systems, not for frontend programming.
+Zato should be used for creating systems of systems, not for frontend programming.
 
 What will the tutorial achieve, exactly?
 ----------------------------------------

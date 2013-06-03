@@ -130,6 +130,10 @@ published on Redis, one of the servers subscribed receives it and a service is i
 Conversly, if a service needs to put a message on a queue, the message is first
 published to Redis, a connector pick it up and the message is sent to its destination.
 
+Note that connectors are never redundant and there are always at least 2 clusters
+running in parallel needed to secure high-availability (HA), as discussed in :doc:`a separate chapter <../admin/guide/ha>`,
+if any connectors are used.
+
 Administrators
 --------------
 
