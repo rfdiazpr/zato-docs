@@ -38,3 +38,32 @@ custom-written main loops developed using
 and 
 `ZeroMQ <http://www.zeromq.org/>`_
 itself, respectively.
+
+What is blocking and what is not
+================================
+
+Zato's servers are asynchronous and can handle a lot of HTTP connections but still
+certain operations will be blocking and should be dealt with by adding more CPUs.
+
+To summarize - if you use HTTP and FTP only you don't need to think about anything,
+but for other protocols, whether their blocking nature is important or not should
+be considered on a case by case basis.
+
+In gevent terms - Zato starts real non-cooperative threads and these will compete for CPU with 
+HTTP gunicorn/gevent's workers - this means you have to think of it in advance
+by adding more CPUs, if needed, so all the components and protocols can run in parallel.
+
+============================================ ======== ===========================================================================
+Operation                                    Blocking Notes
+============================================ ======== ===========================================================================
+Receiving an HTTP (JSON, SOAP, etc.) request No       ---
+Issuing an HTTP (JSON, SOAP, etc.) request   No       ---
+Issuing an FTP request                       No       --- 
+Sending an AMQP message                      Yes      Blocks the server thread for as long as it takes to publish a message
+                                                      on Redis (several ms, typically) off of which it is taken by a connector
+                                                      running as a separate OS-level process
+Sending a ZeroMQ message                     Yes      〃
+Sending a JMS WebSphere MQ message           Yes      〃
+Executing a service from the scheduler       Yes      Blocks the server thread for as long as it takes to invoke the service
+Executing an SQL query                       Yes      Blocks the server thread for as long as it takes to issue the query
+============================================ ======== ===========================================================================
