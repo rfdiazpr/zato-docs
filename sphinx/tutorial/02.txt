@@ -472,7 +472,7 @@ As time passes, our service gets more popular and a new client application appea
 on the scene. They also want to receive the same informations but they're adamant
 to use XML only. Like it or not, we need to accept their requirements.
 
-Luckily for us, Zato introduces a unique concept of :doc:`SimpleIO (SIO) <../progguide/sio>`.
+Luckily for us, Zato introduces a concept of :doc:`SimpleIO (SIO) <../progguide/sio>`.
 
 The idea is, you only declare that your service will return such and such elements
 and how they should be mapped onto a specific data format is up to Zato. 
