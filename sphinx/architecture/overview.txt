@@ -29,7 +29,7 @@ Zato is mostly written in Python with certain crucial parts, such as libraries
 used for parsing XML and JSON, being actually wrappers around lower-level C ones.
 
 Zato's asynchronous HTTP server is written on top of `gunicorn <http://gunicorn.org>`_. It's 
-a modern server which lets one handle large numbers of incoming connections.
+a modern server which lets one handle large numbers of incoming HTTP connections.
 
 External connectors - used for AMQP, WebSphere MQ and ZeroMQ messaging - use
 custom-written main loops developed using
