@@ -56,8 +56,8 @@ by adding more CPUs, if needed, so all the components and protocols can run in p
 ============================================ ======== ===========================================================================
 Operation                                    Blocking Notes
 ============================================ ======== ===========================================================================
-Receiving an HTTP (JSON, SOAP, etc.) request No       ---
-Issuing an HTTP (JSON, SOAP, etc.) request   No       ---
+Receiving an HTTP request (JSON, SOAP, etc.) No       ---
+Issuing an HTTP request (JSON, SOAP, etc.)   No       ---
 Issuing an FTP request                       No       --- 
 Sending an AMQP message                      Yes      Blocks the server thread for as long as it takes to publish a message
                                                       on Redis (several ms, typically) off of which it is taken by a connector
