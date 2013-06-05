@@ -30,7 +30,7 @@ or
 :doc:`accept connections <../progguide/channels>`
 through many
 protocols and transports - 
-:doc:`plain HTTP(S), SOAP, JSON <../progguide/outconn/http>`,
+:doc:`plain HTTP, SOAP, JSON <../progguide/outconn/http>`,
 :doc:`AMQP <../progguide/outconn/amqp>`,
 :doc:`JMS WebSphere MQ <../progguide/outconn/jms-wmq>`,
 :doc:`ZeroMQ <../progguide/outconn/zmq>`,

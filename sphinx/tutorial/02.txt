@@ -712,7 +712,7 @@ covered but you should already have a solid understanding of some of the core ap
   
 * out of the box, you have access to
 
-  * :doc:`HTTP(S) <../progguide/outconn/http>`
+  * :doc:`HTTP <../progguide/outconn/http>`
   * :doc:`AMQP <../progguide/outconn/amqp>`
   * :doc:`JMS WebSphere MQ <../progguide/outconn/jms-wmq>`
   * :doc:`ZeroMQ <../progguide/outconn/zmq>`
