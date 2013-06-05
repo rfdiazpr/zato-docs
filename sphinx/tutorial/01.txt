@@ -142,6 +142,13 @@ in the administration guide and you're encouraged to get through it now
 but basically, this amounts to 3 or 4 things:
 
 * Download and unpack `the latest version <https://zato.io/download/zato-latest.tar.bz2>`_
+
+* Issue the command below in INSTALL_DIR to patch Distutils version
+
+.. parsed-literal::
+
+  $ cp versions.cfg versions.cfg.bak && sed 's/88846/89000/' versions.cfg.bak > versions.cfg
+  
 * Run ./install.sh in INSTALL_DIR
 * Add INSTALL_DIR/bin to $PATH
 
