@@ -53,17 +53,20 @@ In gevent terms - Zato starts real non-cooperative threads and these will compet
 HTTP gunicorn/gevent's workers - this means you have to think of it in advance
 by adding more CPUs, if needed, so all the components and protocols can run in parallel.
 
-============================================ ======== ===========================================================================
-Operation                                    Blocking Notes
-============================================ ======== ===========================================================================
-Receiving an HTTP request (JSON, SOAP, etc.) No       ---
-Issuing an HTTP request (JSON, SOAP, etc.)   No       ---
-Issuing an FTP request                       No       --- 
-Sending an AMQP message                      Yes      Blocks the server thread for as long as it takes to publish a message
-                                                      on Redis (several ms, typically) off of which it is taken by a connector
-                                                      running as a separate OS-level process
-Sending a ZeroMQ message                     Yes      〃
-Sending a JMS WebSphere MQ message           Yes      〃
-Executing a service from the scheduler       Yes      Blocks the server thread for as long as it takes to invoke the service
-Executing an SQL query                       Yes      Blocks the server thread for as long as it takes to issue the query
-============================================ ======== ===========================================================================
+======================================================== ======== ===========================================================================
+Operation                                                Blocking Notes
+======================================================== ======== ===========================================================================
+Receiving an HTTP request (JSON, SOAP, etc.)             No       ---
+Issuing an HTTP request (JSON, SOAP, etc.)               No       ---
+Issuing an FTP request                                   No       --- 
+Sending an AMQP message                                  Yes      Blocks the server thread for as long as it takes to publish a message
+                                                                  on Redis (several ms, typically) off of which it is taken by a connector
+                                                                  running as a separate OS-level process
+Sending a ZeroMQ message                                 Yes      〃
+Sending a JMS WebSphere MQ message                       Yes      〃
+Executing a service from the scheduler                   Yes      Blocks the server thread for as long as it takes to invoke the service
+Executing a service received through AMQP                Yes      〃
+Executing a service received through ZeroMQ              Yes      〃
+Executing a service received through JMS WebSphere MQ    Yes      〃
+Executing an SQL query                                   Yes      Blocks the server thread for as long as it takes to issue the query
+======================================================== ======== ===========================================================================
