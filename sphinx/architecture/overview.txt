@@ -49,9 +49,11 @@ To summarize - if you use HTTP and FTP only you don't need to think about anythi
 but for other protocols, whether their blocking nature is important or not should
 be considered on a case by case basis.
 
-In gevent terms - Zato starts real non-cooperative threads and these will compete for CPU with 
+In `gevent <http://gevent.org>`_ terms - Zato starts real non-cooperative threads and these will compete for CPU with 
 HTTP gunicorn/gevent's workers - this means you have to think of it in advance
-by adding more CPUs, if needed, so all the components and protocols can run in parallel.
+by adding more CPUs and 
+:ref:`workers <admin-guide-config-server-main.gunicorn_workers>`,
+if needed, so all the components and protocols can run in parallel.
 
 ======================================================== ======== ===========================================================================
 Operation                                                Blocking Notes
