@@ -91,8 +91,8 @@ browsing the messages and more.
 
 .. note ::
 
-  **No server restarts are required**. Servers automatically reload their configuration
-  without disrupting the message processing. All changes propagate across all nodes
+  Almost **no server restarts are required**. Servers automatically reload their configuration
+  without disrupting the message processing. Almost all changes propagate across all nodes
   of a cluster completely behind the scenes.
 
 .. image:: /gfx/webadmin1.jpg
