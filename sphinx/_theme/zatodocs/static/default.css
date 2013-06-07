@@ -39,3 +39,8 @@ h3, h4, h5 {
 .highlight .hll {
     background-color:#ff3 !important;
 }
+
+#s-what-makes-zato-unique {
+    background-color:#ddd;
+    padding:12px
+}
