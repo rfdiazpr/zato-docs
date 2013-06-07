@@ -214,7 +214,7 @@ Public SOAP and JSON server API
 ================================
 
     * **Overview:**
-      :doc:`Introducing the public API</public-api/intro>`
+      :doc:`Introducing the public API</public-api/intro>` | :download:`Download WSDL </public-api/zato.wsdl>`
       
     * **Channels:**
       :doc:`zato.channel.amqp.*</public-api/details/zato.channel.amqp>` |
