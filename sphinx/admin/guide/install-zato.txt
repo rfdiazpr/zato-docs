@@ -14,6 +14,10 @@ The current version of |version| has been tested on the following systems:
 * `Fedora 18 <https://fedoraproject.org/>`_
 * `OS X <https://en.wikipedia.org/wiki/OS_X>`_
 
+CentOS/RHEL users - please visit 
+`ticket #68 <https://github.com/zatosource/zato/issues/68>`_
+on GitHub. Zato 1.2 will add an installer for your systems.
+
 There is nothing Linux or OS X-specific to Zato's codebase and future Zato versions 
 will certainly add installers for additional platforms and systems.
 
@@ -34,6 +38,11 @@ Steps
 * Make sure the system will let the installer establish outgoing connections to the Internet,
   this is needed in order to download all the dependencies required
 
+* Install
+  `rsync <https://en.wikipedia.org/wiki/Rsync>`_
+  and
+  `curl <https://en.wikipedia.org/wiki/CURL>`_
+
 * (OS X only) Install `homebrew <http://brew.sh/>`_
   
 * Download 
@@ -49,12 +58,11 @@ Steps
   
     $ tar -xjf zato-|version|.tar.bz2 && cd zato-|version|
     
-* Patch Setuptools version
+* Install :doc:`latest hotfixes <./hotfixes>`
 
   .. parsed-literal::
   
-    $ cp versions.cfg versions.cfg.bak && sed 's/88846/89000/' \\
-        versions.cfg.bak > versions.cfg
+    zato-1.1$ curl -O https://zato.io/hotfixes/hotfixman.sh && bash hotfixman.sh
     
 * Run the installer 
 
@@ -132,8 +140,6 @@ Steps
     zato-1.1$ zato --version
     Zato |version|
     zato-1.1$
-    
-* Check if any :doc:`hotfixes <./hotfixes>` need to be installed
   
 * That's all, Zato has been successfully installed in the system. 
   You can now visit :doc:`the main documentation index <../../index>` and have 
