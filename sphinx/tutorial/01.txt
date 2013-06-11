@@ -139,18 +139,21 @@ First thing needed is installing Zato itself. There's
 :doc:`a short chapter <../admin/guide/install-zato>`
 on doing just that
 in the administration guide and you're encouraged to get through it now
-but basically, this amounts to 3 or 4 things:
-
-* Download and unpack `the latest version <https://zato.io/download/zato-latest.tar.bz2>`_
-
-* Issue the command below in INSTALL_DIR to patch Distutils version
+but basically, you need to have rsync and curl installed and then:
 
 .. parsed-literal::
 
-  $ cp versions.cfg versions.cfg.bak && sed 's/88846/89000/' versions.cfg.bak > versions.cfg
-  
-* Run ./install.sh in INSTALL_DIR
-* Add INSTALL_DIR/bin to $PATH
+  $ curl -O https://zato.io/download/zato-1.1.tar.bz2
+  $ tar xjvf zato-1.1.tar.bz2 && cd zato-1.1
+  $ curl -O https://zato.io/hotfixes/hotfixman.sh && bash hotfixman.sh
+  $ ./install.sh
+  [snip output]
+  OK
+  $ ./bin/zato --version
+  Zato 1.1
+  $
+
+
 
 .. note ::
 
