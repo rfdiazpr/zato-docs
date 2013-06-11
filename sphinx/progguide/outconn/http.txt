@@ -72,9 +72,10 @@ self.outgoing.soap.get
   
   :rtype: (A thin wrapper around a connection to the server)
 
-Regardless of whether the connection is to a plain HTTP server or to a SOAP one,
-the object returned offers a .conn attribute over which servers are actually accessed
-using methods and attributes listed below.
+.. note ::
+  Regardless of whether the connection is to a plain HTTP server or to a SOAP one,
+  the object returned offers a .conn attribute over which servers are actually accessed
+  using methods and attributes listed below.
 
 ======= ========= ===============================================================================================
 Name    Type      Notes
@@ -179,6 +180,20 @@ Plain HTTP - JSON
           
           ping_info = cust_cases.conn.ping(self.cid)
           self.logger.info(ping_info)
+          
+Plain HTTP - GET requests
+`````````````````````````
+
+::
+
+  from zato.server.service import Service
+  
+  class MyService(Service):
+      def handle(self):
+          out = self.outgoing.plain_http.get('CRM Connection')
+          url_params = {'id':1, 'type_id':2}
+          response = out.conn.get(self.cid, url_params)
+          self.logger.info(response.text)
           
           
 SOAP
