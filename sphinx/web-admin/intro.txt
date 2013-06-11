@@ -16,10 +16,10 @@ of already existing clusters and services.
 
 .. note ::
 
-  A key feature of web admin is that all changes you make are always automatically 
-  introduced on all servers and other components.  **No restarts are ever required**.
+  A key feature of web admin is that almost all changes you make are always automatically 
+  introduced on all servers and other components.  **No restarts are usually required**.
   
-  Everything is always hot-reconfigured. There is no concept of a downtime 
+  Almost everything is always hot-reconfigured. There is no concept of a downtime 
   due to configuration reload. A load-balancer takes care of distributing load
   to servers which need more time to update their config. 
   
