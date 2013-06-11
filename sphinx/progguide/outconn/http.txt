@@ -155,8 +155,8 @@ session attribute A handle to the underlying `Requests <http://docs.python-reque
 Usage examples
 --------------
 
-Plain HTTP - JSON
-`````````````````
+Plain HTTP - POST JSON
+``````````````````````
 
 ::
 
@@ -173,7 +173,7 @@ Plain HTTP - JSON
           cust_cases = self.outgoing.plain_http.get('CRM Customer Cases')
           
           request = dumps({'cust_id':1, 'name':'Foo Bar'})
-          response = cust_profile.conn.post(request)
+          response = cust_profile.conn.post(self.cid, request)
           
           self.logger.info(response.headers['content-type'])
           self.logger.info(response.text)
