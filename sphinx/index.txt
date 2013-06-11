@@ -142,6 +142,7 @@ Programming guide
       :doc:`Invoking other services <progguide/invoking-services>` |
       :doc:`Python client<progguide/clients/python>` |
       :doc:`Security<progguide/security>` |
+      :doc:`Where to keep service-local config<progguide/service-local-config>` |
       :doc:`Documenting<progguide/documenting>`
       
     * **Request/response documents:**

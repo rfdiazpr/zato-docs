@@ -44,3 +44,7 @@ h3, h4, h5 {
     background-color:#ddd;
     padding:12px
 }
+
+.highlight .c {
+    color:#666 !important;
+}

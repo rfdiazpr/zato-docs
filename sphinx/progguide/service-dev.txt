@@ -26,6 +26,8 @@ it's still a valid service.
        def handle(self):
            pass
            
+.. _progguide-conventions:
+           
 Programming conventions
 -----------------------
 

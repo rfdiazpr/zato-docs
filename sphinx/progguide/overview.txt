@@ -116,6 +116,7 @@ Read next
       :doc:`Invoking other services <./invoking-services>` |
       :doc:`Python client<./clients/python>` |
       :doc:`Security<./security>` |
+      :doc:`Where to keep service-local config<./service-local-config>` |
       :doc:`Documenting<./documenting>`
       
     * **Request/response documents:**
