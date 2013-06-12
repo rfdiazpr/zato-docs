@@ -20,10 +20,10 @@ or other methods.
 
 Enmasse does not deal with services, it's concerned with server objects only
 which is anything but services, including channels, scheduler jobs or security
-definitions. How to deploy services is documented in 
+definitions and other types. How to deploy services is documented in 
 :doc:`a separate chapter <./installing-services>`.
 
-Enmasse will never delete existing objects. This needs be done using the GUI or API.
+Enmasse will never delete existing objects. This needs to be performed using the GUI or API.
 
 Tasks you can use enmasse for
 -----------------------------
@@ -31,7 +31,7 @@ Tasks you can use enmasse for
 * Exporting server objects from a cluster into JSON
 * Preparing cluster configuration in JSON and merging it with a contents
   of an already existing cluster
-* Importing objects from JSON into clusters, optionally replacing objects that already exist
+* Importing objects from an export file into clusters, optionally replacing objects that already exist
 
 Usage scenarios
 ---------------
@@ -48,7 +48,7 @@ Usage scenarios
 * You have a team of programmers each responsible for a part of a solution and you
   want to limit the number of conflicts in a central config repository. You split
   the local JSON config file into multiple smaller ones each of which can be included
-  by enmasse to form a whole.
+  by enmasse to form a whole that will be imported as a single unit.
   
 .. image:: /gfx/admin/enmasse-env.png
    :alt:
@@ -60,7 +60,7 @@ Installing
   :doc:`installed <./install-zato>` Zato binaries to. This is where the 'py' command
   needed by enmasse resides (note that it's 'py', not 'python').
   
-* Download `enmasse <https://zato.io/download/enmasse>`_ display its help to confirm the download was successful
+* Download `enmasse <https://zato.io/download/enmasse>`_ and display its help to confirm the download was successful
 
   ::
   
@@ -113,24 +113,25 @@ Workflow
   that can be included later on.
   
 * Combine all the includes, optionally merging ODB objects from a cluster of choice,
-  into an export JSON file. This is a file that can be imported to clusters. Note that
+  into an export file. This is a file that can be imported to clusters. Note that
   its format is not documented and may change without prior notice.
   
-* Import objects from an export JSON file, optionally replacing objects that already
+* Import objects from an export file, optionally replacing objects that already
   exist in a cluster.
   
 Notes
 ~~~~~
 
 * Both --export-* arguments always need an input JSON file in --input, if you're
-  just starting out, put an empty dictionary {} to the file, but just remember that
+  just starting out, put an empty dictionary {} to the file, but remember that
   it must exist and must not be empty.
   
 * --path is always required and serves a double role. 
 
   If you're exporting data it must be path to a running
-  server you're exporting data from. Just point it to any existing server directory if you're
-  not exporting data from ODB - this requirement will be lifted in future versions.
+  server you're exporting data from. Just point it to any existing server directory even if you're
+  not exporting data from ODB. The requirement to point --path to a server even if
+  ODB is not used will be lifted in future versions.
   
   If you're importing data --path must be path to a running server you're importing data into.
   
@@ -138,7 +139,7 @@ Notes
 
   For imports, --input is an export file out of which definitions should be imported on a cluster.
   
-* For imports, the order enmasse works in, is guaranteed to be:
+* For imports, the order enmasse works in is guaranteed to be:
 
   * Existing definitions are updated
   * Existing objects other than definitions are updated
