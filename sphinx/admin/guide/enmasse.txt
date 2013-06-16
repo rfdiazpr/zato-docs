@@ -15,7 +15,7 @@ you can use the `enmasse <https://zato.io/download/enmasse>`_ command line tool
 to manage :doc:`ODB-based <../../architecture/sql-odb>` server objects as a group.
 This lets you store each piece of configuration
 as a set of JSON files in a repository where they will be versioned or backed up
-and you use enmasse to perform roll-outs from command line without the use of GUI
+and to use enmasse to perform roll-outs from command line without the use of GUI
 or other methods.
 
 Enmasse does not deal with services, it's concerned with server objects only
