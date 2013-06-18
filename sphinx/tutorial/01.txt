@@ -139,7 +139,7 @@ First thing needed is installing Zato itself. There's
 :doc:`a short chapter <../admin/guide/install-zato>`
 on doing just that
 in the administration guide and you're encouraged to get through it now
-but basically, you need to have rsync and curl installed and then:
+but basically, you need Linux Ubuntu/Mint/Fedora or OS X, install rsync and curl, and issue the commands:
 
 .. parsed-literal::
 
