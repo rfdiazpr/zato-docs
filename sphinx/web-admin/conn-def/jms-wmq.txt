@@ -13,7 +13,7 @@ A definition is a template off of which a concrete connection, either
 :doc:`channel <../channels/jms-wmq>`
 or an 
 :doc:`outgoing one<../outgoing/jms-wmq>`,
-is created. Merely creating a definition doesn't start a connection to a broker.
+is created. Merely creating a definition doesn't start a connection to a queue manager.
 
 One definition can serve to create multiple channels or outgoing connections.
 

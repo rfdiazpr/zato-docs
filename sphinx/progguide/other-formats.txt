@@ -5,8 +5,8 @@ Other data formats
 ==================
 
 If you can't use :doc:`SIO <./sio>`, :doc:`JSON <./json>` or :doc:`XML <./xml>`
-it's not a real issue. Your services can accept and return data of any type
-provided they're not so called binary data, such information needs to
+your services can still accept and return data of any type
+provided they're not so called binary data - such information needs to
 wrapped in BASE64 or a similar encoding.
 
 First let's create an empty service. Save the file as other_example.py and
