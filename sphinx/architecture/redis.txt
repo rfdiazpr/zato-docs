@@ -5,7 +5,7 @@ Redis
    :align: center
 
 Redis key/value database (KVDB) is used by servers to store data that is 
-of highly dynamic od volatile nature. Each cluster needs a KVDB and each KVDB
+of highly dynamic or volatile nature. Each cluster needs a KVDB and each KVDB
 belongs to a single cluster only, Redis cannot be shared between clusters.
 
 The data stored in Redis can be:
@@ -89,4 +89,3 @@ Data dictionaries are a feature that allows one to easily map values between
 applications. For instance, a CRM might use ISO 4217 currency names (US dollar is
 USD) while an accounting application could use numerical values (US dollar is 840).
 A data dictionary is a mapping between the two and it's stored in Redis for a quick retrieval.
-Such data is kept in Redis.

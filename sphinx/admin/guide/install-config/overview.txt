@@ -63,7 +63,7 @@ To set up a completely new Zato environment you need to:
     * Load-balancer
     * Servers
     
-    SQL ODB and a cluster's config need to me be created first and in that order,
+    SQL ODB and a cluster's config need to be created first and in that order,
     the rest can be installed in any order.
 
 .. _admin-guide-install-config-versioned:
@@ -74,7 +74,7 @@ Config files are versioned
 A history of changes to any config file is automatically kept in a given component's
 `Bazaar <http://bazaar.canonical.com/en/>`_ repository, i.e. in the ./config/repo directory.
 
-This allows to compare different config versions or to revert to a safe state
+This allows one to compare different config versions or to revert to a safe state
 after a mix-up.
 
 The repository is created and managed completely behind the scenes and needs no
