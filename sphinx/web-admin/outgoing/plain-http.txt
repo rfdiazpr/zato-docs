@@ -57,7 +57,7 @@ Security            Name of a security definition -
 Ping
 ----
 
-.. image:: /gfx/web-admin/outgoing/plain-http-ping.png
+.. image:: /gfx/web-admin/outgoing/plain-http-soap-ping.png
 
 A connection can be pinged - this sends an HTTP request (HEAD by default) from one of a 
 cluster's servers to a location specified by the connection's definition. 
