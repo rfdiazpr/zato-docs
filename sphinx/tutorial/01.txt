@@ -326,7 +326,7 @@ can be invoked through the load-balancer using curl (output below is slightly re
 
 ::
 
-  $ curl localhost:11223/zato/ping
+  $ curl localhost:11223/zato/ping -d '{}'
   {"zato_env": 
     {"details": "", "result": "ZATO_OK", "cid": "K215495307960446051245422023713428938487"}, 
    "zato_ping_response": {"pong": "zato"}}
@@ -472,7 +472,7 @@ now use curl again to invoke our creation.
 
 ::
 
-  $ curl localhost:11223/tutorial/first-service
+  $ curl localhost:11223/tutorial/first-service -d '{}'
   $
   
 This doesn't produce any output because the service returns none, it's only
