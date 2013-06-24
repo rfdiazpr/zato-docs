@@ -94,6 +94,9 @@ data_format  string   Yes      If given and it's a channel, must be either 'xml'
 host         string   Yes      If it's an outgoing connection, the host to invoke services on. Must include either 'http://' or 'https://' prefix.
 ping_method  string   Yes      (New in 1.2) If it's an outgoing connection, the HTTP method to use for :doc:`pinging <./zato.http-soap.ping>` the connection. 
                                HEAD will be used if ping_method is not given.
+pool_size    int      Yes      (New in 1.2) If it's an outgoing connection, how many HTTP connections to keep in a pool at maximum for this particular
+                               outgoing connection. The connections are added to the pool as needed, on fly. Default value of 200
+                               will be used if pool_size is not given.
 ============ ======== ======== ================================================================================================================================================
             
 
@@ -161,7 +164,8 @@ JSON example
      "transport": "plain_http",
      "url_path": "/json",
      "host": "http://10.152.11.182:9093",
-     "ping_method": "OPTIONS"
+     "ping_method": "OPTIONS",
+     "pool_size": 90
    }
 
    {

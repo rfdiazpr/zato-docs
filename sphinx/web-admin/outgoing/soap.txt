@@ -38,6 +38,9 @@ URL path            Path a service to be invoked is mounted on
 SOAP action         SOAP action a service to be invoked uses
 SOAP version        SOAP version a service to be invoked uses, can be either 1.1 or 1.2.
 Ping method         (New in 1.2) HTTP method to use for pinging the connection (defaults to HEAD).
+Pool size           (New in 1.2) How big an underlying connection pool can be, any requests above it will be discarded and a warning
+                    will be logged. This setting is per each server worker and connections are created on demand, when they're actually
+                    needed.
 Security            Name of a security definition - 
                     :doc:`HTTP Basic Auth <../security/basic-auth>`,
                     :doc:`technical account <../security/tech-account>`

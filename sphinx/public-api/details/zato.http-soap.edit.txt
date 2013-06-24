@@ -39,6 +39,7 @@ soap_version string   Yes      〃
 data_format  string   Yes      〃
 host         string   Yes      〃
 ping_method  string   Yes      〃
+pool_size    int      Yes      〃
 ============ ======== ======== ================================================================
             
 
