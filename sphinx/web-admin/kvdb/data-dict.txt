@@ -23,6 +23,8 @@ translate incoming data.
 A translation is always performed between elements generically dubbed System1, 
 Key1 and Value1 into System2 and Key2 and its result is a Value2.
 
+Note that the names of systems and keys may contain only letters, digits and underscores.
+
 Dictionaries
 ------------
 
