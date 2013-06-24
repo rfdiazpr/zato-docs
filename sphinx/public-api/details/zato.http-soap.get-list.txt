@@ -53,6 +53,7 @@ soap_action   string   Yes      〃
 soap_version  string   Yes      〃
 data_format   string   Yes      〃
 host          string   Yes      〃
+ping_method   string   Yes      〃
 ============= ======== ======== ==============================================================================
 
 SOAP example
@@ -96,6 +97,7 @@ SOAP example
                    <soap_version xsi:nil="true"/>
                    <data_format>json</data_format>
                    <host xsi:nil="true"/>
+                   <ping_method>HEAD</ping_method>
                </item>
                <item>
                    <id>157</id>
@@ -113,6 +115,7 @@ SOAP example
                    <soap_version xsi:nil="true"/>
                    <data_format>json</data_format>
                    <host xsi:nil="true"/>
+                   <ping_method>OPTIONS</ping_method>
                </item>
                <item>
                    <id>233</id>
@@ -130,6 +133,7 @@ SOAP example
                    <soap_version xsi:nil="true"/>
                    <data_format>json</data_format>
                    <host xsi:nil="true"/>
+                   <ping_method>CUSTOM</ping_method>
                </item>
                </item_list>
             </zato_http_soap_get_list_response>
@@ -169,7 +173,8 @@ JSON example
         "host": null,
         "service_id": 118,
         "url_path": "/myapp/soap/myservice1",
-        "id": 240
+        "id": 240,
+        "ping_method":"HEAD"
       },
       {
         "data_format": "xml",
@@ -186,7 +191,8 @@ JSON example
         "host": null,
         "service_id": 118,
         "url_path": "/myapp/soap/myservice2",
-        "id": 242
+        "id": 242,
+        "ping_method":"OPTIONS"
       },
       {
         "data_format": "xml",
@@ -203,7 +209,8 @@ JSON example
         "host": null,
         "service_id": 21,
         "url_path": "/zato/soap",
-        "id": 41
+        "id": 41,
+        "ping_method":"CUSTOM"
       }
     ]
   }

@@ -537,6 +537,7 @@ targetNamespace="https://zato.io/ns/20130518"
             <xsd:element name="soap_version" type="xsd:string" minOccurs="0"/>
             <xsd:element name="data_format" type="xsd:string" minOccurs="0"/>
             <xsd:element name="host" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="ping_method" type="xsd:string" minOccurs="0"/>
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
@@ -588,6 +589,7 @@ targetNamespace="https://zato.io/ns/20130518"
             <xsd:element name="soap_version" type="xsd:string" minOccurs="0"/>
             <xsd:element name="data_format" type="xsd:string" minOccurs="0"/>
             <xsd:element name="host" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="ping_method" type="xsd:string" minOccurs="0"/>
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
@@ -641,6 +643,7 @@ targetNamespace="https://zato.io/ns/20130518"
                         <xsd:element name="soap_version" type="xsd:string" minOccurs="0"/>
                         <xsd:element name="data_format" type="xsd:string" minOccurs="0"/>
                         <xsd:element name="host" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="ping_method" type="xsd:string" minOccurs="0"/>
                       </xsd:sequence>
                     </xsd:complexType>
                   </xsd:element>
