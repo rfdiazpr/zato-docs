@@ -77,7 +77,6 @@ regardless of its origin and programming language used. The interfaces include:
 * WebSphere MQ
 * ZeroMQ
 * JMS
-* REST
 * SOAP
 * SQL
 
