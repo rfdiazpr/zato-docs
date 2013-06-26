@@ -201,9 +201,16 @@ SOAP
 
 ::
 
+  # lxml
+  from lxml import etree
+
+  # Zato
   from zato.server.service import Service
   
   class MyService(Service):
       def handle(self):
           service = self.outgoing.soap.get('Set Account Balance')
-          service.conn.send(self.cid, '<data><id>123</id><value>45.67</value></data>')
+          resp = service.conn.send(self.cid, '<data><id>123</id><val>45.67</val></data>')
+          
+          # Parse resp.text to create an XML object
+          xml = etree.fromstring(resp.text)

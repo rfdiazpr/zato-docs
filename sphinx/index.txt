@@ -162,9 +162,25 @@ Programming guide
     * **Logging and debugging techniques:**
       :doc:`Logging<progguide/logging>` | 
       :doc:`Debugging<progguide/debugging>`
-      
+
     * **Customizing web admin:**
       :doc:`Making sure you work on the right environment<progguide/web-admin-settings>`
+      
+    * **Examples**
+      :doc:`Overview <progguide/examples/index>` | 
+      :doc:`HTTP<progguide/examples/http>` | 
+      :doc:`SimpleIO (SIO)<progguide/examples/sio>` | 
+      :doc:`JSON<progguide/examples/json>` | 
+      :doc:`XML<progguide/examples/xml>` | 
+      :doc:`CSV<progguide/examples/csv>` | 
+      :doc:`Other data formats<progguide/examples/other-formats>` | 
+      :doc:`AMQP<progguide/examples/amqp>` |
+      :doc:`FTP<progguide/examples/ftp>` |
+      :doc:`JMS WebSphere MQ<progguide/examples/jms-wmq>` |
+      :doc:`Redis <progguide/examples/redis>` |
+      :doc:`Scheduler<progguide/examples/scheduler>` |
+      :doc:`SQL <progguide/examples/sql>` |
+      :doc:`ZeroMQ <progguide/examples/zmq>`
 
 Administration guide
 ====================
@@ -285,6 +301,7 @@ Zato, the open-source project
    intro/*
    progguide/*
    progguide/clients/*
+   progguide/examples/*
    progguide/outconn/*
    project/*
    public-api/*
