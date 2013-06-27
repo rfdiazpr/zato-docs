@@ -16,3 +16,23 @@ lxml offers every feature you need for working XML, such as namespaces, XPath,
 XSLT, XInclude, XML Schema, RelaxNG and many more but if you prefer other tools
 you can use anything and Zato won't constrain you.
 
+
+.. _progguide-examples-soap-request:
+
+Accessing SOAP request
+----------------------
+
+The SOAP body converted to an `ObjectifiedElement <http://lxml.de/objectify.html>`_ 
+is available as self.request.payload. As with any other channels, the raw request
+is available as self.request.raw_request should you need to access SOAP headers
+manually.
+
+.. _progguide-examples-soap-response:
+
+Creating responses
+------------------
+
+.. _progguide-examples-soap-invoking:
+
+Invoking a SOAP service
+-----------------------

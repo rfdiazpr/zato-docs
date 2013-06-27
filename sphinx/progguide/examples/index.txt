@@ -59,9 +59,9 @@ Topic                                       Examples
                                             * :ref:`Working with namespaces <progguide-examples-xml-ns>`
                                             * :ref:`Invoking an XML service<progguide-examples-xml-invoking>`
 
-:doc:`SOAP <./soap>`                        * :ref:`Accessing SOAP request <>`
-                                            * :ref:`Creating responses <>`
-                                            * :ref:`Invoking a SOAP service<>`
+:doc:`SOAP <./soap>`                        * :ref:`Accessing SOAP request <progguide-examples-soap-request>`
+                                            * :ref:`Creating responses <progguide-examples-soap-response>`
+                                            * :ref:`Invoking a SOAP service <progguide-examples-soap-invoking>`
                                             
 :doc:`CSV <./csv>`                          * :ref:`Reading CSV on input <>`
                                             * :ref:`Producing CSV <>`
