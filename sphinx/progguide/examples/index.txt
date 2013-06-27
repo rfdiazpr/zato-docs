@@ -48,15 +48,16 @@ Topic                                       Examples
                                             
 :doc:`SimpleIO (SIO) <./sio>`               * :ref:`Making a service accept and return JSON/XML/SOAP <progguide-examples-sio-service>`
                                             
-:doc:`JSON <./json>`                        * :ref:`Accessing JSON request <>`
-                                            * :ref:`Converting JSON to Bunch <>`
-                                            * :ref:`Returning JSON <>`
-                                            * :ref:`Invoking a JSON service<>`
+:doc:`JSON <./json>`                        * :ref:`Accessing JSON request <progguide-examples-json-request>`
+                                            * :ref:`Converting JSON to Bunch <progguide-examples-json-bunch>`
+                                            * :ref:`Returning JSON <progguide-examples-json-responses>`
+                                            * :ref:`Invoking a JSON service using GET <progguide-examples-json-invoking-get>`
+                                            * :ref:`Invoking a JSON service using POST <progguide-examples-json-invoking-post>`
                                             
-:doc:`XML <./xml>`                          * :ref:`Accessing XML request <>`
-                                            * :ref:`Creating responses <>`
-                                            * :ref:`Working with namespaces <>`
-                                            * :ref:`Invoking an XML service<>`
+:doc:`XML <./xml>`                          * :ref:`Accessing XML request <progguide-examples-xml-request>`
+                                            * :ref:`Creating responses <progguide-examples-xml-responses>`
+                                            * :ref:`Working with namespaces <progguide-examples-xml-ns>`
+                                            * :ref:`Invoking an XML service<progguide-examples-xml-invoking>`
 
 :doc:`SOAP <./soap>`                        * :ref:`Accessing SOAP request <>`
                                             * :ref:`Creating responses <>`
