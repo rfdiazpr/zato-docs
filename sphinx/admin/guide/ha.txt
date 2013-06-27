@@ -20,11 +20,6 @@ Reminding a couple of facts will make it easier to discuss the matter:
 * Each cluster has a single HTTP load-balancer in front of it so the traffic
   is always distribute fairly over all servers
 
-* Receving a message sent by the scheduler blocks the current server thread for as long
-  as it's needed to invoke the service. You need to make sure the cluster has enough 
-  :ref:`main.gunicorn_workers <admin-guide-config-server-main.gunicorn_workers>`
-  running in parallel to handle the load.
-
 * If a cluster establishes any AMQP, JMS WebSphere MQ or ZeroMQ connections,
   these are always managed by connector processes - there are as many connectors
   as there are channels and outgoing connections using these 3 technologies.
