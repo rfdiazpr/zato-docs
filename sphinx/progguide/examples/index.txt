@@ -46,8 +46,7 @@ Topic                                       Examples
                                             * :ref:`Setting content type and status code <progguide-examples-http-content-type-status-code>`
                                             * :ref:`Returning attachments <progguide-examples-http-attachments>`
                                             
-:doc:`SimpleIO (SIO) <./sio>`               * :ref:`Making a service accept JSON/XML/SOAP <>`
-                                            * :ref:`Returning JSON/XML/SOAP <>`
+:doc:`SimpleIO (SIO) <./sio>`               * :ref:`Making a service accept and return JSON/XML/SOAP <progguide-examples-sio-service>`
                                             
 :doc:`JSON <./json>`                        * :ref:`Accessing JSON request <>`
                                             * :ref:`Converting JSON to Bunch <>`
