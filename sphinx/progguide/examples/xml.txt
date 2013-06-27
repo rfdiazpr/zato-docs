@@ -4,10 +4,10 @@
 XML examples
 ============
 
-Create a :doc:`plain HTTP <../../web-admin/channels/plain-http>` with data format
+Create a :doc:`plain HTTP channel<../../web-admin/channels/plain-http>` with data format
 set to XML to turn on automatic (de-)serialization of incoming/returned XML messages.
 
-The examples below use `lxml <http://lxml.de>`_ because it's
+As with :doc:`SOAP <./soap>`, the examples below use `lxml <http://lxml.de>`_ because it's
 a very good choice for efficient XML processing but you're not constrained to that one library
 only.
 

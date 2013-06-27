@@ -168,17 +168,18 @@ Programming guide
       
     * **Examples**
       :doc:`Overview <progguide/examples/index>` | 
-      :doc:`HTTP<progguide/examples/http>` | 
-      :doc:`SimpleIO (SIO)<progguide/examples/sio>` | 
-      :doc:`JSON<progguide/examples/json>` | 
-      :doc:`XML<progguide/examples/xml>` | 
-      :doc:`CSV<progguide/examples/csv>` | 
-      :doc:`Other data formats<progguide/examples/other-formats>` | 
-      :doc:`AMQP<progguide/examples/amqp>` |
-      :doc:`FTP<progguide/examples/ftp>` |
-      :doc:`JMS WebSphere MQ<progguide/examples/jms-wmq>` |
+      :doc:`HTTP <progguide/examples/http>` | 
+      :doc:`SimpleIO (SIO) <progguide/examples/sio>` | 
+      :doc:`JSON <progguide/examples/json>` | 
+      :doc:`XML <progguide/examples/xml>` | 
+      :doc:`SOAP <progguide/examples/soap>` | 
+      :doc:`CSV <progguide/examples/csv>` | 
+      :doc:`Other data formats <progguide/examples/other-formats>` | 
+      :doc:`AMQP <progguide/examples/amqp>` |
+      :doc:`FTP <progguide/examples/ftp>` |
+      :doc:`JMS WebSphere MQ <progguide/examples/jms-wmq>` |
       :doc:`Redis <progguide/examples/redis>` |
-      :doc:`Scheduler<progguide/examples/scheduler>` |
+      :doc:`Scheduler <progguide/examples/scheduler>` |
       :doc:`SQL <progguide/examples/sql>` |
       :doc:`ZeroMQ <progguide/examples/zmq>`
 
