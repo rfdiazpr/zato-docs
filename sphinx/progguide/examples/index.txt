@@ -84,8 +84,8 @@ Topic                                       Examples
                                             * :ref:`Dictionaries (hashmaps) <progguide-examples-redis-dictionaries>`
                                             * :ref:`Transactions <progguide-examples-redis-transactions>`
                                             
-:doc:`Scheduler <./scheduler>`              * :ref:`Invoking services at predefined intervals <>`
-                                              :ref:`Scheduling jobs programmatically <>`
+:doc:`Scheduler <./scheduler>`              * :ref:`Invoking services at predefined intervals <progguide-examples-scheduler-invoking>`
+                                            * :ref:`Scheduling jobs programmatically <progguide-examples-zmq-scheduling-programmatically>`
 
 :doc:`SQL <./sql>`                          * :ref:`Issuing raw SQL <>`
                                             * :ref:`SQLAlchemy <>`
