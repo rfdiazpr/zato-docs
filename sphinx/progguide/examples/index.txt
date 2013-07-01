@@ -56,7 +56,6 @@ Topic                                       Examples
                                             
 :doc:`XML <./xml>`                          * :ref:`Accessing XML request <progguide-examples-xml-request>`
                                             * :ref:`Creating responses <progguide-examples-xml-responses>`
-                                            * :ref:`Working with namespaces <progguide-examples-xml-ns>`
                                             * :ref:`Invoking an XML service<progguide-examples-xml-invoking>`
 
 :doc:`SOAP <./soap>`                        * :ref:`Accessing SOAP request <progguide-examples-soap-request>`
