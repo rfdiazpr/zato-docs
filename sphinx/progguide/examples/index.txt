@@ -76,8 +76,8 @@ Topic                                       Examples
                                             * :ref:`Listing directories <>`
                                             * :ref:`Reading files <>`
                                             
-:doc:`JMS WebSphere MQ <./jms-wmq>`         * :ref:`Receiving messages from queues <>`
-                                            * :ref:`Sending messages to queues <>`
+:doc:`JMS WebSphere MQ <./jms-wmq>`         * :ref:`Receiving messages from queues <progguide-examples-jms-wmq-receiving>`
+                                            * :ref:`Sending messages to queues <progguide-examples-jms-wmq-sending>`
                                             
 :doc:`Redis <./redis>`                      * :ref:`Simple keys <>`
                                             * :ref:`Sets <>`
