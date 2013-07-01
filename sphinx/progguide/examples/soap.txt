@@ -4,7 +4,7 @@
 SOAP examples
 ==============
 
-Create a :doc:`SOAP channel<../../web-admin/channels/plain-http>` to  turn on
+Create a :doc:`SOAP channel<../../web-admin/channels/soap>` to  turn on
 automatic (de-)serialization of incoming/returned SOAP messages. You deal with the SOAP
 body only, headers are dealt with by Zato itself.
 
