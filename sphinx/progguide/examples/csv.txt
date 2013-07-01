@@ -4,6 +4,8 @@
 CSV examples
 ============
 
+.. _progguide-examples-csv-request:
+
 Reading CSV on input
 --------------------
 
@@ -38,6 +40,9 @@ other things, what delimiter or dialect (such as Excel) to use.
     INFO - Allium aaseae
     INFO - 
     INFO - Erigeron abajoensis
+
+
+.. _progguide-examples-csv-response:
 
 Producing CSV
 -------------
