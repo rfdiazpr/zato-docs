@@ -79,17 +79,17 @@ Topic                                       Examples
 :doc:`JMS WebSphere MQ <./jms-wmq>`         * :ref:`Receiving messages from queues <progguide-examples-jms-wmq-receiving>`
                                             * :ref:`Sending messages to queues <progguide-examples-jms-wmq-sending>`
                                             
-:doc:`Redis <./redis>`                      * :ref:`Simple keys <>`
-                                            * :ref:`Sets <>`
-                                            * :ref:`Dictionaries <>`
-                                            * :ref:`Transactions <>`
+:doc:`Redis <./redis>`                      * :ref:`Simple keys <progguide-examples-redis-simple-keys>`
+                                            * :ref:`Lists <progguide-examples-redis-lists>`
+                                            * :ref:`Dictionaries (hashmaps) <progguide-examples-redis-dictionaries>`
+                                            * :ref:`Transactions <progguide-examples-redis-transactions>`
                                             
 :doc:`Scheduler <./scheduler>`              * :ref:`Invoking services at predefined intervals <>`
 
 :doc:`SQL <./sql>`                          * :ref:`Issuing raw SQL <>`
                                             * :ref:`SQLAlchemy <>`
                                             * :ref:`Turning SQL into JSON/XML/SOAP <>`
+                                            
 :doc:`ZeroMQ <./zmq>`                       * :ref:`Receiving messages from sockets <>`
-
                                             * :ref:`Sending messages to sockets <>`
 =========================================== ================================================================================================
