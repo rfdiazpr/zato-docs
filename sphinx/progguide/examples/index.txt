@@ -72,7 +72,6 @@ Topic                                       Examples
                                             * :ref:`Sending messages to exchanges <progguide-examples-amqp-sending>`
                                             
 :doc:`FTP <./ftp>`                          * :ref:`Putting files on server <>`
-                                            * :ref:`Periodically checking for new files <>`
                                             * :ref:`Listing directories <>`
                                             * :ref:`Reading files <>`
                                             
@@ -87,8 +86,8 @@ Topic                                       Examples
 :doc:`Scheduler <./scheduler>`              * :ref:`Invoking services at predefined intervals <progguide-examples-scheduler-invoking>`
                                             * :ref:`Scheduling jobs programmatically <progguide-examples-zmq-scheduling-programmatically>`
 
-:doc:`SQL <./sql>`                          * :ref:`Issuing raw SQL <>`
-                                            * :ref:`SQLAlchemy <>`
+:doc:`SQL <./sql>`                          * :ref:`Issuing raw SQL <progguide-examples-sql-raw>`
+                                            * :ref:`SQLAlchemy <progguide-examples-sql-sqlalchemy>`
                                             
 :doc:`ZeroMQ <./zmq>`                       * :ref:`Receiving messages from sockets <progguide-examples-zmq-receiving>`
                                             * :ref:`Sending messages to sockets <progguide-examples-zmq-sending>`
