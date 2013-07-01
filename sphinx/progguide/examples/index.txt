@@ -65,8 +65,8 @@ Topic                                       Examples
 :doc:`CSV <./csv>`                          * :ref:`Reading CSV on input <progguide-examples-csv-request>`
                                             * :ref:`Producing CSV <progguide-examples-csv-response>`
                                             
-:doc:`Other data formats <./other-formats>` * :ref:`Reading arbitrary data formats <>`
-                                            * :ref:`Accessing BASE64-encoded data <>`
+:doc:`Other data formats <./other-formats>` * :ref:`Reading arbitrary data formats <progguide-examples-other-formats-reading>`
+                                            * :ref:`Accessing BASE64-encoded data <progguide-examples-other-formats-base64>`
                                             
 :doc:`AMQP <./amqp>`                        * :ref:`Receiving messages from queues <>`
                                             * :ref:`Sending messages to exchanges <>`
