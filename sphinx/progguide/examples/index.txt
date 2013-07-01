@@ -85,10 +85,10 @@ Topic                                       Examples
                                             * :ref:`Transactions <progguide-examples-redis-transactions>`
                                             
 :doc:`Scheduler <./scheduler>`              * :ref:`Invoking services at predefined intervals <>`
+                                              :ref:`Scheduling jobs programmatically <>`
 
 :doc:`SQL <./sql>`                          * :ref:`Issuing raw SQL <>`
                                             * :ref:`SQLAlchemy <>`
-                                            * :ref:`Turning SQL into JSON/XML/SOAP <>`
                                             
 :doc:`ZeroMQ <./zmq>`                       * :ref:`Receiving messages from sockets <>`
                                             * :ref:`Sending messages to sockets <>`
