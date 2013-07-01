@@ -1,0 +1,42 @@
+.. highlight:: python
+   :linenothreshold: 0
+
+FTP usage examples
+==================
+
+SQL databases are accessed through the
+`fs <http://pythonhosted.org/fs/>`_
+library and 
+`any method <http://pythonhosted.org/fs/interface.html>`_
+the library supports is available to Zato services as well.
+
+Hence the code below serves as examples only, it's not a full reference.
+
+.. _progguide-examples-ftp-putting:
+
+Putting files on server
+-----------------------
+
+.. _progguide-examples-ftp-listing:
+
+Listing directories
+-------------------
+
+::
+
+   from zato.server.service import Service
+   
+   class MyService(Service):
+       def handle(self):
+           conn = self.outgoing.ftp.get('My FTP')
+           listing = conn.listdir('/usr')
+           self.logger.info(listing)
+
+::
+
+   INFO - [u'bin', u'src', u'sbin', u'lib32', u'lib', u'share', u'include']
+
+.. _progguide-examples-ftp-reading:
+
+Reading files
+-------------
