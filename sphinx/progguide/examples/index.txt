@@ -90,6 +90,6 @@ Topic                                       Examples
 :doc:`SQL <./sql>`                          * :ref:`Issuing raw SQL <>`
                                             * :ref:`SQLAlchemy <>`
                                             
-:doc:`ZeroMQ <./zmq>`                       * :ref:`Receiving messages from sockets <>`
-                                            * :ref:`Sending messages to sockets <>`
+:doc:`ZeroMQ <./zmq>`                       * :ref:`Receiving messages from sockets <progguide-examples-zmq-receiving>`
+                                            * :ref:`Sending messages to sockets <progguide-examples-zmq-sending>`
 =========================================== ================================================================================================
