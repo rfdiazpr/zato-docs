@@ -62,9 +62,8 @@ Topic                                       Examples
                                             * :ref:`Creating responses <progguide-examples-soap-response>`
                                             * :ref:`Invoking a SOAP service <progguide-examples-soap-invoking>`
                                             
-:doc:`CSV <./csv>`                          * :ref:`Reading CSV on input <>`
-                                            * :ref:`Producing CSV <>`
-                                            * :ref:`Turning JSON/XML/SOAP into CSV and vice-versa <>`
+:doc:`CSV <./csv>`                          * :ref:`Reading CSV on input <progguide-examples-csv-request>`
+                                            * :ref:`Producing CSV <progguide-examples-csv-response>`
                                             
 :doc:`Other data formats <./other-formats>` * :ref:`Reading arbitrary data formats <>`
                                             * :ref:`Accessing BASE64-encoded data <>`
