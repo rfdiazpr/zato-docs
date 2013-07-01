@@ -14,6 +14,14 @@ No programming is needed to receive messages from AMQP queues. Create a new
 and a given service will be invoked for each message taken off a queue.
 The request will be in self.request.payload.
 
+::
+
+   from zato.server.service import Service   
+   
+   class MyService(Service):
+       def handle(self):
+           self.logger.info('Got message: {}'.format(self.request.payload))
+
 
 .. _progguide-examples-amqp-sending:
 
