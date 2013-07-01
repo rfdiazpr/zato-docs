@@ -32,4 +32,4 @@ allows to set or override custom headers and properties.
    
    class MyService(Service):
        def handle(self):
-           self.outgoing.amqp.send('my-message', 'outgoing-connection-name')
+           self.outgoing.amqp.send('my-message', 'outconn-name', '/exchange', 'route-key')
