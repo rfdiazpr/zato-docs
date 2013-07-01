@@ -68,8 +68,8 @@ Topic                                       Examples
 :doc:`Other data formats <./other-formats>` * :ref:`Reading arbitrary data formats <progguide-examples-other-formats-reading>`
                                             * :ref:`Accessing BASE64-encoded data <progguide-examples-other-formats-base64>`
                                             
-:doc:`AMQP <./amqp>`                        * :ref:`Receiving messages from queues <>`
-                                            * :ref:`Sending messages to exchanges <>`
+:doc:`AMQP <./amqp>`                        * :ref:`Receiving messages from queues <progguide-examples-amqp-receiving>`
+                                            * :ref:`Sending messages to exchanges <progguide-examples-amqp-sending>`
                                             
 :doc:`FTP <./ftp>`                          * :ref:`Putting files on server <>`
                                             * :ref:`Periodically checking for new files <>`
