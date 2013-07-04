@@ -10,12 +10,28 @@ library and
 `any method <http://pythonhosted.org/fs/interface.html>`_
 the library supports is available to Zato services as well.
 
-Hence the code below serves as examples only, it's not a full reference.
+Hence the code below serves as a set of examples only, it's not a full reference.
 
 .. _progguide-examples-ftp-putting:
 
 Putting files on server
 -----------------------
+
+::
+
+   from zato.server.service import Service
+   
+   class MyService(Service):
+       def handle(self):
+           conn = self.outgoing.ftp.get('My FTP')
+           contents = conn.setcontents('/tmp/myfile', 'Hello\nFTP!\n')
+
+.. code-block:: text
+
+   $ cat /tmp/myfile
+   Hello
+   FTP!
+   $
 
 .. _progguide-examples-ftp-listing:
 
@@ -40,3 +56,27 @@ Listing directories
 
 Reading files
 -------------
+
+.. code-block:: text
+
+   $ cat /tmp/myfile 
+   123
+   456
+   789
+   $
+
+::
+
+   from zato.server.service import Service
+   
+   class MyService(Service):
+       def handle(self):
+           conn = self.outgoing.ftp.get('My FTP')
+           contents = conn.getcontents('/tmp/myfile')
+           self.logger.info(contents)
+           
+.. code-block:: text
+
+  INFO - 123
+  456
+  789
